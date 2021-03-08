@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/InteractableObject.tscn" type="PackedScene" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 0, 0 )
@@ -804,7 +805,7 @@ points = PoolVector2Array( 8, 32, 0, 32, 0, 0, 32, 0, 32, 8, 8, 8, 8, 32 )
 [node name="World" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 208, 64 )
+position = Vector2( 222.158, 63.0561 )
 current = true
 smoothing_enabled = true
 
@@ -824,7 +825,7 @@ tile_data = PoolIntArray( -131061, 0, 0, -131060, 0, 1, -131059, 0, 1, -131058, 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 208, 64 )
+position = Vector2( 222.158, 63.0561 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
@@ -924,3 +925,21 @@ margin_left = 5.0
 margin_top = 4.0
 margin_right = 69.0
 margin_bottom = 20.0
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 246.0
+margin_top = 103.0
+margin_right = 310.0
+margin_bottom = 167.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
