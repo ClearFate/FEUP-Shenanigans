@@ -7,7 +7,7 @@
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=5]
 [ext_resource path="res://World/Grass.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
-[ext_resource path="res://HealthUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/InteractableObject.tscn" type="PackedScene" id=9]
 [ext_resource path="res://icon.png" type="Texture" id=10]
 
