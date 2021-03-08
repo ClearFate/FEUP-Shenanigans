@@ -3,6 +3,9 @@ class_name DialogueAction
 export(String, FILE, "*.json") var dialogue_file_path : String
 
 
+func start_dialogue():
+	var dialogue : Dictionary = load_dialogue(dialogue_file_path)
+	
 
 
 #parses json

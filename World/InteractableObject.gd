@@ -17,4 +17,7 @@ func _ready():
 
 
 func _on_InteractionBox_area_entered(_area):
+	interact()
+
+func interact():
 	queue_free()

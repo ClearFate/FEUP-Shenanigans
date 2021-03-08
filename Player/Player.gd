@@ -41,6 +41,8 @@ func _process(_delta):
 func _input(event):
 	if event.is_action_pressed("interact"):
 		interactionBox.enable_interaction()
+	elif event.is_action_released("interact"):
+		interactionBox.disable_interaction()
 
 func _physics_process(delta): #use _physics_process if using player position or other player attributes
 	match state:
