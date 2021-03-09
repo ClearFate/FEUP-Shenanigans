@@ -39,9 +39,9 @@ func _process(_delta):
 	
 
 func _input(event):		
-	if event.is_action_pressed("interact") && can_interact():
-		interactionBox.enable_interaction()
+	if event.is_action_pressed("interact") && can_interact() && state == MOVE:
 		animationState.travel("Idle")
+		interactionBox.enable_interaction()
 	elif event.is_action_released("interact"):
 		interactionBox.disable_interaction()
 

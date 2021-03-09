@@ -1,6 +1,5 @@
 extends Node
 
-signal start_dialogue(dialogue)
 signal update_dialogue(dialogue)
 signal end_dialogue()
 
@@ -36,7 +35,7 @@ func handleDialogueEvent(dialogue_file_path):
 func begin_dialogue():
 	state = DIALOGUE
 	curr_conversation_id = "001"
-	emit_signal("start_dialogue", get_curr_conversation())
+	update_dialogue()
 
 func next_dialogue():
 	curr_conversation_id = get_next_conversation_id()
@@ -51,7 +50,9 @@ func update_dialogue():
 	if curr_conversation_id == "end":
 		end_dialogue()
 	else:
-		emit_signal("update_dialogue", get_curr_conversation())
+		var curr_conversation = get_curr_conversation()
+		trim_replies(curr_conversation)
+		emit_signal("update_dialogue", curr_conversation)
 		
 func end_dialogue():
 	state = EXPLORATION
@@ -63,7 +64,18 @@ func get_curr_conversation():
 func get_next_conversation_id():
 	var curr_conv = get_curr_conversation()
 	return curr_conv["next"]
+	
+func trim_replies(conversation : Dictionary):
+	if conversation.has("replies"):
+		var replies = conversation["replies"]
+		for key in replies:
+			var reply = replies[key]
+			if reply.has("flag") && !check_flag(reply["flag"]):
+				replies.erase(key)
 
+func check_flag(flag):
+	return flag == "killed_john"
+	
 #parses json
 func load_dialogue(file_path) -> Dictionary:
 	var file = File.new()

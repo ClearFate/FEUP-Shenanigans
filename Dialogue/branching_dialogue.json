@@ -1,11 +1,16 @@
 {
+    "start": {
+
+    },
     "001": {
         "name": "Laio",
         "reward": "none",
         "text": "Spare a few drops of coffee for a friend?",
         "replies": {
-            "002": "No way, dude",
-            "003": "Here you go"
+            "002": { "text": "No way, dude"}, 
+            "005": { "text": "Shut up, or I'll kill you too", "flag":"killed_john"},
+            "003": { "text": "Here you go"},
+            "004": { "text": "*Ignore*"}
         },
         "next": "004"
     },
@@ -25,6 +30,12 @@
         "name": "Laio",
         "reward": "none",
         "text": "Fine, ignore me like the rest",
+        "next": "end"
+    },
+    "005": {
+        "name": "Laio",
+        "reward": "none",
+        "text": "Now that I think of it, I'm good",
         "next": "end"
     }
 }

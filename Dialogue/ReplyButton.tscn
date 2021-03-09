@@ -3,10 +3,8 @@
 [ext_resource path="res://Dialogue/ReplyButton.gd" type="Script" id=1]
 
 [node name="Button" type="Button"]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 84.0
-margin_bottom = 24.0
+margin_right = 131.0
+margin_bottom = 20.0
 text = "You will regret this"
 script = ExtResource( 1 )
 __meta__ = {
