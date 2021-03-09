@@ -2,11 +2,13 @@
     "001": {
         "name": "Laio",
         "reward": "none",
-        "text": "i q"
+        "text": "i q",
+        "next": "002"
     },
     "002": {
-        "name": "Loio",
+        "name": "Laio",
         "reward": "sword",
-        "text": "howdy"
+        "text": "howdy",
+        "next": "end"
     }
 }

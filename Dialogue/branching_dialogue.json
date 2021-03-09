@@ -1,0 +1,30 @@
+{
+    "001": {
+        "name": "Laio",
+        "reward": "none",
+        "text": "Spare a few drops of coffee for a friend?",
+        "replies": {
+            "002": "No way, dude",
+            "003": "Here you go"
+        },
+        "next": "004"
+    },
+    "002": {
+        "name": "Laio",
+        "reward": "none",
+        "text": "Thank you anyway",
+        "next": "end"
+    },
+    "003": {
+        "name": "Laio",
+        "reward": "none",
+        "text": "Thank you so much",
+        "next": "end"
+    },
+    "004": {
+        "name": "Laio",
+        "reward": "none",
+        "text": "Fine, ignore me like the rest",
+        "next": "end"
+    }
+}

@@ -22,12 +22,15 @@ onready var wanderController = $WanderController
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(stats.max_health)
-	print(stats.health)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	
+	if !EventHandler.can_world_move():
+		return
+	
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
 	

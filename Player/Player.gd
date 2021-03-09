@@ -38,13 +38,16 @@ func _process(_delta):
 		get_tree().quit()
 	
 
-func _input(event):
-	if event.is_action_pressed("interact"):
+func _input(event):		
+	if event.is_action_pressed("interact") && can_interact():
 		interactionBox.enable_interaction()
+		animationState.travel("Idle")
 	elif event.is_action_released("interact"):
 		interactionBox.disable_interaction()
 
 func _physics_process(delta): #use _physics_process if using player position or other player attributes
+	if !can_move():
+		return
 	match state:
 		MOVE:
 			move_state(delta)
@@ -111,3 +114,9 @@ func _on_Hurtbox_area_entered(area):
 	
 func on_death():
 	queue_free()
+	
+func can_move():
+	return EventHandler.can_world_move()
+	
+func can_interact():
+	return can_move()
