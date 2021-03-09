@@ -74,7 +74,12 @@ func trim_replies(conversation : Dictionary):
 				replies.erase(key)
 
 func check_flag(flag):
-	return flag == "killed_john"
+	var ret = false
+	var config = ConfigFile.new()
+	var err = config.load("./Dialogue/flags.cfg")
+	if err == OK: # If not, something went wrong with the file loading
+		ret = config.get_value("npcs", flag)
+	return ret
 	
 #parses json
 func load_dialogue(file_path) -> Dictionary:
