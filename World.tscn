@@ -9,7 +9,7 @@
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/InteractableObject.tscn" type="PackedScene" id=9]
-[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://Dialogue/DialogueBox.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 0, 0 )
@@ -926,20 +926,7 @@ margin_top = 4.0
 margin_right = 69.0
 margin_bottom = 20.0
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
-margin_left = 246.0
-margin_top = 103.0
-margin_right = 310.0
-margin_bottom = 167.0
-texture = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 11 )]
+margin_left = 11.0
+margin_top = 104.0
+margin_bottom = -6.0
