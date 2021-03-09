@@ -34,7 +34,7 @@ func handleDialogueEvent(dialogue_file_path):
 
 func begin_dialogue():
 	state = DIALOGUE
-	curr_conversation_id = "001"
+	choose_starting_conversation()
 	update_dialogue()
 
 func next_dialogue():
@@ -51,7 +51,7 @@ func update_dialogue():
 		end_dialogue()
 	else:
 		var curr_conversation = get_curr_conversation()
-		trim_replies(curr_conversation)
+		trim_branching_replies(curr_conversation)
 		emit_signal("update_dialogue", curr_conversation)
 		
 func end_dialogue():
@@ -64,21 +64,36 @@ func get_curr_conversation():
 func get_next_conversation_id():
 	var curr_conv = get_curr_conversation()
 	return curr_conv["next"]
-	
-func trim_replies(conversation : Dictionary):
+
+#removes branching options that do not meet the specified criteria (flags)
+func trim_branching_replies(conversation : Dictionary):
 	if conversation.has("replies"):
 		var replies = conversation["replies"]
-		for key in replies:
-			var reply = replies[key]
-			if reply.has("flag") && !check_flag(reply["flag"]):
-				replies.erase(key)
+		trim_branching_options(replies)
+		
+func trim_branching_options(options):
+	for key in options:
+			var option = options[key]
+			if option.has("flag") && !check_flag(option["flag"]):
+				options.erase(key)
 
+func choose_starting_conversation():
+	var start = dialogue["start"]
+	trim_branching_options(start)
+	if start.empty():
+		curr_conversation_id = "001"
+	else:
+		var options = start.keys()
+		curr_conversation_id = options[0]
+	
+
+#checks if the flag is true (in the flags.cfg file)
 func check_flag(flag):
 	var ret = false
 	var config = ConfigFile.new()
 	var err = config.load("./Dialogue/flags.cfg")
 	if err == OK: # If not, something went wrong with the file loading
-		ret = config.get_value("npcs", flag)
+		ret = config.get_value("npcs", flag) #TODO: UPDATE SECTION VALUE
 	return ret
 	
 #parses json
