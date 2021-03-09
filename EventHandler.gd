@@ -92,7 +92,7 @@ func check_flag(flag):
 	var ret = false
 	var config = ConfigFile.new()
 	var err = config.load("./Dialogue/flags.cfg")
-	if err == OK: # If not, something went wrong with the file loading
+	if err == OK && config.has_section_key("npcs", flag): # If not, something went wrong with the file loading
 		ret = config.get_value("npcs", flag) #TODO: UPDATE SECTION VALUE
 	return ret
 	
