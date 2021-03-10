@@ -1,5 +1,6 @@
 extends Node
 
+const flag_file_path = "./Dialogue/flags.cfg"
 signal update_dialogue(dialogue)
 signal end_dialogue()
 
@@ -91,11 +92,24 @@ func choose_starting_conversation():
 func check_flag(flag):
 	var ret = false
 	var config = ConfigFile.new()
-	var err = config.load("./Dialogue/flags.cfg")
+	var err = config.load(flag_file_path)
 	if err == OK && config.has_section_key("npcs", flag): # If not, something went wrong with the file loading
 		ret = config.get_value("npcs", flag) #TODO: UPDATE SECTION VALUE
 	return ret
-	
+
+func set_flag(flag):
+	var config = ConfigFile.new()
+	var err = config.load(flag_file_path)
+	if err == OK: # If not, something went wrong with the file loading
+		# Store a variable if and only if it hasn't been defined yet
+		if config.has_section_key("npcs", flag):
+			if config.get_value("npcs", flag) == false:
+				config.set_value("npcs", flag, true)
+		else:
+			config.set_value("npcs", flag, true)
+	# Save the changes by overwriting the previous file
+	config.save(flag_file_path)
+
 #parses json
 func load_dialogue(file_path) -> Dictionary:
 	var file = File.new()

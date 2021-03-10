@@ -66,7 +66,6 @@ MAX_SPEED = 50
 frames = SubResource( 6 )
 animation = "Fly"
 frame = 4
-playing = true
 offset = Vector2( 0, -12 )
 
 [node name="Shadow" type="Sprite" parent="."]
