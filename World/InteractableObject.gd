@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-
+export(String) var dialogue_file_name = "branching_dialogue.json"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,4 +16,4 @@ func _on_InteractionBox_area_entered(_area):
 	interact()
 
 func interact():
-	EventHandler.handleDialogueEvent("./Dialogue/" + "branching_dialogue.json")
+	EventHandler.handleDialogueEvent("./Dialogue/" + dialogue_file_name)

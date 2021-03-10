@@ -29,31 +29,28 @@
     "002": {
         "name": "Laio",
         "reward": "none",
-        "text": "Thank you anyway",
-        "next": "end"
+        "text": "Thank you anyway"
     },
     "003": {
         "name": "Laio",
         "reward": "none",
-        "text": "Thank you so much",
-        "next": "end"
+        "text": "Thank you so much"
     },
     "004": {
         "name": "Laio",
         "reward": "none",
-        "text": "Fine, ignore me like the rest",
-        "next": "end"
+        "text": "Fine, ignore me like the rest"
+        
     },
     "005": {
         "name": "Laio",
         "reward": "none",
-        "text": "Now that I think of it, I'm good",
-        "next": "end"
+        "text": "Now that I think of it, I'm good"
+        
     },
     "006": {
         "name": "Laio",
         "reward": "none",
-        "text": "You murdered my best friend, begone",
-        "next": "end"
+        "text": "You murdered my best friend, begone"
     }
 }

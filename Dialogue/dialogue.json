@@ -8,7 +8,6 @@
     "002": {
         "name": "Laio",
         "reward": "sword",
-        "text": "howdy",
-        "next": "end"
+        "text": "howdy"
     }
 }

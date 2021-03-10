@@ -64,7 +64,10 @@ func get_curr_conversation():
 	
 func get_next_conversation_id():
 	var curr_conv = get_curr_conversation()
-	return curr_conv["next"]
+	if curr_conv.has("next"):
+		return curr_conv["next"]
+	else:
+		return "end"
 
 #removes branching options that do not meet the specified criteria (flags)
 func trim_branching_replies(conversation : Dictionary):
@@ -79,11 +82,13 @@ func trim_branching_options(options):
 				options.erase(key)
 
 func choose_starting_conversation():
+	curr_conversation_id = "001"
+	if !dialogue.has("start"):
+		return
+	
 	var start = dialogue["start"]
 	trim_branching_options(start)
-	if start.empty():
-		curr_conversation_id = "001"
-	else:
+	if !start.empty():
 		var options = start.keys()
 		curr_conversation_id = options[0]
 	
