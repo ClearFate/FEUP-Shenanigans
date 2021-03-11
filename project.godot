@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "DialogueAction",
 "language": "GDScript",
 "path": "res://Dialogue/DialogueAction.gd"
+}, {
+"base": "Resource",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://Inventory/Inventory.gd"
+}, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Inventory/Item.gd"
 } ]
 _global_script_class_icons={
-"DialogueAction": ""
+"DialogueAction": "",
+"Inventory": "",
+"Item": ""
 }
 
 [application]
@@ -27,6 +39,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerStats="*res://Player/PlayerStats.tscn"
+EventHandler="*res://EventHandler.tscn"
 
 [display]
 
