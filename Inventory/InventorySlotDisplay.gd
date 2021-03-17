@@ -13,7 +13,7 @@ func display_item(item):
 		else:
 			itemAmountLabel.text = ""
 	else:
-		itemTextureRect.texture = load("res://Inventory/Items/EmptyItemPlaceholder.png")
+		itemTextureRect.texture = load("res://Inventory/Items/EmptyInventorySlot.png")
 		itemAmountLabel.text = ""
 
 func get_drag_data(_position):
