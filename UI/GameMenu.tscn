@@ -46,11 +46,19 @@ margin_right = 25.0
 margin_bottom = 140.0
 text = "Exit"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -100.0
+margin_left = -105.0
 margin_top = 40.0
-margin_right = 100.0
-custom_fonts/font = SubResource( 3 )
-text = "Feup Shenanigans"
+margin_right = 105.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 200, 30 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[rainbow]FEUP Shenanigans"
+text = "FEUP Shenanigans"
+scroll_active = false
+__meta__ = {
+"_editor_description_": ""
+}
