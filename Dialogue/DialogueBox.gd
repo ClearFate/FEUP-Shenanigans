@@ -4,7 +4,7 @@ extends Control
 onready var ReplyButton = preload("res://Dialogue/ReplyButton.tscn")
 
 onready var textLabel = $RichTextLabel
-onready var answerBox = $AnswerBox
+onready var answerBox = $ScrollContainer/AnswerBox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
