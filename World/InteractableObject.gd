@@ -1,19 +1,18 @@
 extends StaticBody2D
 
-export(String) var dialogue_file_name = "branching_dialogue.json"
+enum TYPE { DIALOGUE, ITEM, FLAG, FREE}
+export(TYPE) var interaction_type setget update_type
+export(String) var interaction_val setget update_interaction_val
+export(Texture) var asset setget my_func
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func my_func(tex):
+	asset = tex
+	get_node("Sprite").texture = asset
 
+func update_type(type):
+	interaction_type = type
+	get_node("InteractableBox").interaction_type = self.interaction_type
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_InteractionBox_area_entered(_area):
-	interact()
-
-func interact():
-	EventHandler.handleDialogueEvent("./Dialogue/" + dialogue_file_name)
+func update_interaction_val(val):
+	interaction_val = val
+	get_node("InteractableBox").interaction_val = self.interaction_val

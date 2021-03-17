@@ -1,11 +1,19 @@
 extends Area2D
 
+enum TYPE { DIALOGUE, ITEM, FLAG, FREE}
+export(TYPE) var interaction_type = TYPE.DIALOGUE
+export(String) var interaction_val = "branching_dialogue"
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func interact():
+	match interaction_type:
+		TYPE.DIALOGUE:
+			var dialogue_file_name = interaction_val
+			EventHandler.handleDialogueEvent("./Dialogue/" + dialogue_file_name + ".json")
+		TYPE.FLAG:
+			var flag_name = interaction_val
+			EventHandler.set_flag(flag_name)
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _on_InteractableBox_area_entered(area):
+	interact()
+
