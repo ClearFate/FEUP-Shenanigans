@@ -52,6 +52,8 @@ func update_dialogue():
 		end_dialogue()
 	else:
 		var curr_conversation = get_curr_conversation()
+		if curr_conversation.has("set_flag"):
+			set_flag(curr_conversation["set_flag"])
 		trim_branching_replies(curr_conversation)
 		emit_signal("update_dialogue", curr_conversation)
 		

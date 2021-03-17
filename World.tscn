@@ -922,7 +922,7 @@ asset = ExtResource( 12 )
 [node name="InteractableObject3" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 202.276, -130.352 )
 interaction_type = 2
-interaction_val = "killed_john"
+interaction_val = "badonk"
 asset = ExtResource( 12 )
 
 [node name="InteractableObject2" parent="YSort/Trees" instance=ExtResource( 9 )]

@@ -45,7 +45,8 @@
     "005": {
         "name": "Laio",
         "reward": "none",
-        "text": "Now that I think of it, I'm good"
+        "text": "Now that I think of it, I'm good",
+        "set_flag": "killed_john"
         
     },
     "006": {
