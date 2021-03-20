@@ -22,7 +22,10 @@ func close_dialogue_box():
 func update_dialogue_box(conversation):
 	if !visible:
 		visible = true
-	textLabel.text = conversation["name"] + ": " + conversation["text"]
+	if conversation.has("name"):
+		textLabel.text = conversation["name"] + ": " + conversation["text"]
+	else:
+		textLabel.text = conversation["text"]
 	init_answer_box(conversation)
 
 func init_answer_box(conversation):
