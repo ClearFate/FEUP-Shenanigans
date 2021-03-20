@@ -7,8 +7,11 @@ export(String) var interaction_val = "branching_dialogue"
 func interact():
 	match interaction_type:
 		TYPE.DIALOGUE:
-			var dialogue_file_name = interaction_val
-			EventHandler.handleDialogueEvent("./Dialogue/" + dialogue_file_name + ".json")
+			var dialogue_key = interaction_val
+			EventHandler.handleDialogueEvent(interaction_val)
+			#load from specific dialogue file
+#			var dialogue_file_name = interaction_val
+#			EventHandler.handleDialogueEvent("./Dialogue/" + dialogue_file_name + ".json")
 		TYPE.FLAG:
 			var flag_name = interaction_val
 			EventHandler.set_flag(flag_name)

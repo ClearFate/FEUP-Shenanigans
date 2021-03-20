@@ -1,6 +1,7 @@
 extends Node
 
 const flag_file_path = "./Dialogue/flags.cfg"
+const all_dialogues_path = "./Dialogue/all_dialogues.json"
 signal update_dialogue(dialogue)
 signal end_dialogue()
 
@@ -39,9 +40,16 @@ func handleItemEvent(item_name):
 	dialogue = item_message
 	begin_dialogue()
 
-func handleDialogueEvent(dialogue_file_path):
-	dialogue = load_dialogue(dialogue_file_path)
+#load dialogue from specific dialogue file
+#func handleDialogueEvent(dialogue_file_path):
+#	dialogue = load_dialogue(dialogue_file_path)
+#	begin_dialogue()
+
+func handleDialogueEvent(dialogue_key):
+	var dialogues = load_dialogue(all_dialogues_path)
+	dialogue = get_dialogue_from_all(dialogues, dialogue_key)
 	begin_dialogue()
+	
 
 func begin_dialogue():
 	state = DIALOGUE
@@ -170,3 +178,9 @@ func load_dialogue(file_path) -> Dictionary:
 	var dialogue = parse_json(file.get_as_text())
 	assert(dialogue.size() > 0)
 	return dialogue
+
+func get_dialogue_from_all(dialogues, dialogue_key):
+	var ret_dialogue = null
+	if dialogues.has(dialogue_key):
+		ret_dialogue = dialogues[dialogue_key]
+	return ret_dialogue

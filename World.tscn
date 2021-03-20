@@ -917,7 +917,7 @@ position = Vector2( 190, -51 )
 
 [node name="InteractableObject" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 291, -69 )
-interaction_val = "branching_dialogue"
+interaction_val = "guy"
 asset = ExtResource( 13 )
 
 [node name="InteractableObject3" parent="YSort/Trees" instance=ExtResource( 9 )]
@@ -928,7 +928,7 @@ asset = ExtResource( 12 )
 
 [node name="InteractableObject2" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 92, -77 )
-interaction_val = "dialogue"
+interaction_val = "bush"
 asset = ExtResource( 10 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
