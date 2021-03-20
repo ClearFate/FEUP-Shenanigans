@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Pixellettersfull-BnJ5.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Button.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.302673, 0.667969, 0.522421, 1, 0.222168, 0.691391, 0.875, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 320
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[node name="GameMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuBackground" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 1.52588e-05
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" parent="." instance=ExtResource( 2 )]
+margin_left = -25.0
+margin_top = 90.0
+margin_right = 25.0
+margin_bottom = 110.0
+text = "Start"
+reference_path = "res://World.tscn"
+
+[node name="Button2" parent="." instance=ExtResource( 2 )]
+margin_left = -25.0
+margin_top = 120.0
+margin_right = 25.0
+margin_bottom = 140.0
+text = "Exit"
+
+[node name="Label" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -105.0
+margin_top = 40.0
+margin_right = 105.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 200, 30 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[rainbow]FEUP Shenanigans"
+text = "FEUP Shenanigans"
+scroll_active = false
+__meta__ = {
+"_editor_description_": ""
+}
