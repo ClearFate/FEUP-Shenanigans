@@ -1,13 +1,21 @@
 {
+    "start": {
+        "003": {
+            "item": "sword"
+        },
+        "001": {}
+    },
     "001": {
         "name": "Laio",
-        "reward": "none",
         "text": "i q",
         "next": "002"
     },
     "002": {
         "name": "Laio",
-        "reward": "sword",
         "text": "howdy"
+    },
+    "003": {
+        "name": "Laio",
+        "text": "Cool Sword"
     }
 }

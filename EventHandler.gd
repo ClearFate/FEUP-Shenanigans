@@ -16,6 +16,9 @@ var state = EXPLORATION
 var dialogue : Dictionary
 var curr_conversation_id
 
+var gave_item = false #true when a dialogue option resulted in a reward, false otherwise
+#used to give the item received message before resuming the dialogue
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -31,6 +34,10 @@ func _input(event):
 func can_world_move():
 	return state == EXPLORATION
 
+func handleItemEvent(item_name):
+	var item_message  = { "001": {"reward": item_name,"text": "..."}}
+	dialogue = item_message
+	begin_dialogue()
 
 func handleDialogueEvent(dialogue_file_path):
 	dialogue = load_dialogue(dialogue_file_path)
@@ -42,7 +49,8 @@ func begin_dialogue():
 	update_dialogue()
 
 func next_dialogue():
-	curr_conversation_id = get_next_conversation_id()
+	if !gave_item:
+		curr_conversation_id = get_next_conversation_id()
 	update_dialogue()
 	
 
@@ -55,10 +63,18 @@ func update_dialogue():
 		end_dialogue()
 	else:
 		var curr_conversation = get_curr_conversation()
-		if curr_conversation.has("set_flag"):
-			set_flag(curr_conversation["set_flag"])
-		trim_branching_replies(curr_conversation)
-		emit_signal("update_dialogue", curr_conversation)
+		if curr_conversation.has("reward") && gave_item:
+			gave_item = false
+			var item = curr_conversation["reward"]
+			give_item(item)
+			item_reward_message(item)
+		else:
+			if curr_conversation.has("reward"):
+				gave_item = true #TODO: refactor this, mayhaps?
+			if curr_conversation.has("set_flag"):
+				set_flag(curr_conversation["set_flag"])
+			trim_branching_replies(curr_conversation)
+			emit_signal("update_dialogue", curr_conversation)
 		
 func end_dialogue():
 	state = EXPLORATION
@@ -138,6 +154,10 @@ func has_item(item_id): #TODO: ITEM CHECK
 
 func give_item(item_id): #TODO: GIVE ITEM
 	return set_flag(item_id)
+
+func item_reward_message(item_name):
+	var item_message  = {"text":"You received a " + item_name}
+	emit_signal("update_dialogue", item_message)
 
 #parses json
 func load_dialogue(file_path) -> Dictionary:
