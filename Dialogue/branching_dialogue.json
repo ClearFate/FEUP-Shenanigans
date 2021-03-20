@@ -15,7 +15,7 @@
             },
             "005": {
                 "text": "I killed john and you're next if you don't shut up",
-                "flag": "badonk"
+                "item": "badonk"
             },
             "003": {
                 "text": "Here you go"

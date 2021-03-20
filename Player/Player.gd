@@ -32,11 +32,7 @@ func _ready():
 	stats.connect("no_health", self, "on_death")
 	animationTree.active = true
 	swordHitbox.knockback_vector = roll_vector #sketchy af
-	
-func _process(_delta):
-	if Input.is_action_pressed("exit_game"):
-		get_tree().quit()
-	
+
 
 func _input(event):		
 	if event.is_action_pressed("interact") && can_interact() && state == MOVE:

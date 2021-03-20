@@ -24,6 +24,9 @@ func _input(event):
 	if state == DIALOGUE:
 		if event.is_action_pressed("ui_accept"):
 			next_dialogue()
+	elif Input.is_action_pressed("exit_game"):
+		reset_flags()
+		get_tree().quit()
 
 func can_world_move():
 	return state == EXPLORATION
@@ -82,6 +85,9 @@ func trim_branching_options(options):
 			var option = options[key]
 			if option.has("flag") && !check_flag(option["flag"]):
 				options.erase(key)
+			if option.has("item") && !has_item(option["item"]):
+				options.erase(key)
+
 
 func choose_starting_conversation():
 	curr_conversation_id = "001"
@@ -116,6 +122,22 @@ func set_flag(flag):
 			config.set_value("npcs", flag, true)
 	# Save the changes by overwriting the previous file
 	config.save(flag_file_path)
+
+func reset_flags():
+	var config = ConfigFile.new()
+	var err = config.load(flag_file_path)
+	if err == OK: # If not, something went wrong with the file loading
+		var sections = config.get_sections()
+		for section in sections:
+			config.erase_section(section)
+	# Save the changes by overwriting the previous file
+	config.save(flag_file_path)
+
+func has_item(item_id): #TODO: ITEM CHECK
+	return check_flag(item_id)
+
+func give_item(item_id): #TODO: GIVE ITEM
+	return set_flag(item_id)
 
 #parses json
 func load_dialogue(file_path) -> Dictionary:
