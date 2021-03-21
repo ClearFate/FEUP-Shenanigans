@@ -107,7 +107,7 @@ func trim_branching_replies(conversation : Dictionary):
 		trim_branching_options(replies)
 		
 func trim_branching_options(options):
-	for key in options:
+	for key in options.keys():
 		var option = options[key]
 		if option.has("flag") && !check_flag(option["flag"]):
 			options.erase(key)
