@@ -958,10 +958,11 @@ __meta__ = {
 }
 
 [node name="InventoryContainer" parent="CanvasLayer/InventoryUI" instance=ExtResource( 14 )]
-margin_left = 221.256
-margin_top = 25.2548
-margin_right = 181.256
-margin_bottom = -14.7452
+visible = false
+margin_left = 240.0
+margin_top = 26.0
+margin_right = 200.0
+margin_bottom = -14.0
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/InventoryUI"]
 margin_left = 296.0
