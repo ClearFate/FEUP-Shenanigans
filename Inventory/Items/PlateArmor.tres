@@ -5,7 +5,8 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "PlateArmor"
+name = "Plate Armor"
+id = "PlateArmor"
 texture = ExtResource( 2 )
 heal = 0
 dmg = 0

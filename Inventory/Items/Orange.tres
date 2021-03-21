@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 name = "Orange"
+id = "Orange"
 texture = ExtResource( 2 )
 heal = 1
 dmg = 0

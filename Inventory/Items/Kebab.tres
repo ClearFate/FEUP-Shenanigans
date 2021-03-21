@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 name = "Kebab"
+id = "Kebab"
 texture = ExtResource( 2 )
 heal = 5
 dmg = 0

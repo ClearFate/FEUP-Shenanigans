@@ -35,7 +35,7 @@ func can_drop_data(_position, data):
 func drop_data(_position, data):
 	var my_item_index = get_index()
 	var my_item = inventory.items[my_item_index]
-	if my_item is Item and my_item.name == data.item.name:
+	if my_item is Item and my_item.id == data.item.id:
 		my_item.amount += data.item.amount
 		inventory.emit_signal("items_changed", [my_item_index])
 	else:

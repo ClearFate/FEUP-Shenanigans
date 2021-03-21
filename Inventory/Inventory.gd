@@ -12,7 +12,7 @@ export(Array, Resource) var items = [
 
 func set_item(item_index, item):
 	var previousItem = items[item_index]
-	if previousItem is Item && previousItem.name == item.name:
+	if previousItem is Item && previousItem.id == item.id:
 		previousItem.amount += item.amount
 	else:
 		items[item_index] = item
@@ -44,7 +44,7 @@ func make_items_unique():
 func has_item(item_id):
 	var ret = false
 	for item in items:
-		if item is Item && item.name == item_id:
+		if item is Item && item.id == item_id:
 			ret = true
 			break
 	return ret
@@ -53,7 +53,7 @@ func get_item_index(item_id):
 	var index = -1
 	for i in range(items.size()):
 		var item = items[i]
-		if item is Item && item.name == item_id:
+		if item is Item && item.id == item_id:
 			index = i
 			break
 	return index
