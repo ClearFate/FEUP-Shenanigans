@@ -5,7 +5,10 @@ var inventory = preload("res://Inventory/Inventory.tres")
 func _ready():
 	inventory.connect("items_changed", self, "_on_items_changed")
 	inventory.make_items_unique()
-	print(inventory.items)
+#	print(inventory.items)
+#	print(inventory.has_item("Orange"))
+	inventory.add_item("Orange")
+	print(inventory.get_item_index("Orange"))
 	update_inventory_display()
 
 func update_inventory_display():

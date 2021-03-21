@@ -37,3 +37,29 @@ func make_items_unique():
 		else: #if its null
 			unique_items.append(null)
 	items = unique_items
+
+func has_item(item_id):
+	var ret = false
+	for item in items:
+		if item is Item && item.name == item_id:
+			ret = true
+			break
+	return ret
+
+func get_item_index(item_id):
+	var index = -1
+	for i in range(items.size()):
+		var item = items[i]
+		if item is Item && item.name == item_id:
+			index = i
+			break
+	return index
+
+func add_item(item_id):
+	var new_item : Item
+	new_item = load("res://Inventory/Items/" + item_id+ ".tres")
+	var existing_new_item_index = get_item_index(item_id) 
+	if get_item_index(item_id) >= 0:
+		set_item(existing_new_item_index, new_item)
+	else:
+		set_item(1, new_item)
