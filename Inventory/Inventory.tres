@@ -1,7 +1,10 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://Inventory/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://Inventory/Items/MageArmor.tres" type="Resource" id=2]
+[ext_resource path="res://Inventory/Items/Grapes.tres" type="Resource" id=3]
+[ext_resource path="res://Inventory/Items/Orange.tres" type="Resource" id=4]
 
 [resource]
 script = ExtResource( 1 )
-items = [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+items = [ null, null, ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
