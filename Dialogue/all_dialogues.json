@@ -1,8 +1,11 @@
 {
     "guy":{
         "start": {
+            "007": {
+                "flag": "ate_kebab"
+            },
             "006": {
-                "flag": "killed_john"
+                "item": "Kebab"
             },
             "001": {}
         },
@@ -11,14 +14,7 @@
             "text": "Spare a few drops of coffee for a friend?",
             "replies": {
                 "002": {
-                    "text": "No way, dude"
-                },
-                "005": {
-                    "text": "I killed john and you're next if you don't shut up",
-                    "item": "body_john"
-                },
-                "003": {
-                    "text": "Here you go"
+                    "text": "I don't have any coffee"
                 },
                 "004": {
                     "text": "*Ignore*"
@@ -32,7 +28,7 @@
         },
         "003": {
             "name": "Laio",
-            "reward": "sword",
+            "reward": "Sword",
             "text": "Thank you so much"
         },
         "004": {
@@ -41,18 +37,41 @@
         },
         "005": {
             "name": "Laio",
-            "text": "Now that I think of it, I'm good",
-            "set_flag": "killed_john"
+            "text": "You... you monster!",
+            "set_flag": "ate_kebab"
         },
         "006": {
             "name": "Laio",
-            "text": "You murdered my best friend, begone"
+            "text": "Hmmm. I smell kebab. Did you take it from my stash?",
+            "replies": {
+                "008": {
+                    "text": "Kebab? What Kebab? (Lie)"
+                },
+                "005": {
+                    "text": "Yes, and I'm gonna eat it",
+                    "item": "Kebab"
+                },
+                "003": {
+                    "text": "Here you go"
+                },
+                "004": {
+                    "text": "*Ignore*"
+                }
+            }
+        },
+        "007": {
+            "name": "Laio",
+            "text": "You bastard, you ate my kebab... Go away!"
+        },
+        "008": {
+            "name": "Laio",
+            "text": "You should probably take a shower, then"
         }
     },
     "bush":{
         "start": {
             "003": {
-                "item": "sword"
+                "item": "Sword"
             },
             "001": {}
         },

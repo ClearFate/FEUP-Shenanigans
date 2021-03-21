@@ -1,5 +1,7 @@
 extends Node
 
+onready var inventory = preload("res://Inventory/Inventory.tres")
+
 const flag_file_path = "./Dialogue/flags.cfg"
 const all_dialogues_path = "./Dialogue/all_dialogues.json"
 signal update_dialogue(dialogue)
@@ -106,11 +108,11 @@ func trim_branching_replies(conversation : Dictionary):
 		
 func trim_branching_options(options):
 	for key in options:
-			var option = options[key]
-			if option.has("flag") && !check_flag(option["flag"]):
-				options.erase(key)
-			if option.has("item") && !has_item(option["item"]):
-				options.erase(key)
+		var option = options[key]
+		if option.has("flag") && !check_flag(option["flag"]):
+			options.erase(key)
+		if option.has("item") && !has_item(option["item"]):
+			options.erase(key)
 
 
 func choose_starting_conversation():
@@ -157,11 +159,11 @@ func reset_flags():
 	# Save the changes by overwriting the previous file
 	config.save(flag_file_path)
 
-func has_item(item_id): #TODO: ITEM CHECK
-	return check_flag(item_id)
+func has_item(item_id):#TODO: TEST
+	return inventory.has_item(item_id)
 
-func give_item(item_id): #TODO: GIVE ITEM
-	return set_flag(item_id)
+func give_item(item_id): #TODO: TEST
+	return inventory.add_item(item_id)
 
 func item_reward_message(item_name):
 	var item_message  = {"text":"You received a " + item_name}

@@ -7,8 +7,8 @@ func _ready():
 	inventory.make_items_unique()
 #	print(inventory.items)
 #	print(inventory.has_item("Orange"))
-	inventory.add_item("Orange")
-	print(inventory.get_item_index("Orange"))
+#	inventory.add_item("Orange")
+#	print(inventory.get_item_index("Orange"))
 	update_inventory_display()
 
 func update_inventory_display():
