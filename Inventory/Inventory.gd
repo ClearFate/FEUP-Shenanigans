@@ -89,7 +89,18 @@ func add_item(item_id):
 	if item_slot_index >= 0:
 		set_item(item_slot_index, new_item)
 	else:
-		items.push_back(new_item)
+		items.push_back(new_item) #just in case (shouldn't be used in current implementation)
+
+func remove_item_amount(item_id, amount):
+	var index = get_item_index(item_id)
+	if index >= 0:
+		var item = items[index]
+		if item.amount - amount >= 1:
+			item.amount -= amount
+		else:
+			items[index] = null
+	emit_signal("items_changed", [index])
+	return index >= 0
 
 func get_curr_slot_size():
 	return items.size()

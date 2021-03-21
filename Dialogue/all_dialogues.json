@@ -38,7 +38,8 @@
         "005": {
             "name": "Laio",
             "text": "You... you monster!",
-            "set_flag": "ate_kebab"
+            "set_flag": "ate_kebab",
+            "remove_item": "Kebab"
         },
         "006": {
             "name": "Laio",

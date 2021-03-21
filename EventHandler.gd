@@ -81,6 +81,8 @@ func update_dialogue():
 		else:
 			if curr_conversation.has("reward"):
 				gave_item = true #TODO: refactor this, mayhaps?
+			if curr_conversation.has("remove_item"):
+				take_item(curr_conversation["remove_item"])
 			if curr_conversation.has("set_flag"):
 				set_flag(curr_conversation["set_flag"])
 			trim_branching_replies(curr_conversation)
@@ -164,6 +166,9 @@ func has_item(item_id):#TODO: TEST
 
 func give_item(item_id): #TODO: TEST
 	return inventory.add_item(item_id)
+
+func take_item(item_id):
+	return inventory.remove_item_amount(item_id, 1)
 
 func item_reward_message(item_name):
 	var item_message  = {"text":"You received a " + item_name}
