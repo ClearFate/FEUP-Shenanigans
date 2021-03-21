@@ -58,11 +58,34 @@ func get_item_index(item_id):
 			break
 	return index
 
+
+func get_first_empty_slot_index():
+	var index = -1
+	for i in range(items.size()):
+		var item = items[i]
+		if !(item is Item):
+			index = i
+			break
+	return index
+
+#returns same item index if it exists. If it doesn't, returns the first empty slot's
+#index if inv isn't full. Returns -1 otherwise (inv full, same item doesn't exist)
+func get_first_replacement_index(item_id):
+	var index = -1
+	for i in range(items.size()):
+		var item = items[i]
+		if item is Item && item.id == item_id:
+			index = i
+			break
+		if !(item is Item) && index == -1:
+			index = i
+	return index
+	
 func add_item(item_id):
 	var new_item : Item
 	new_item = load("res://Inventory/Items/" + item_id+ ".tres")
-	var existing_new_item_index = get_item_index(item_id) 
-	if get_item_index(item_id) >= 0:
-		set_item(existing_new_item_index, new_item)
+	var item_slot_index = get_first_replacement_index(item_id)
+	if item_slot_index >= 0:
+		set_item(item_slot_index, new_item)
 	else:
 		set_item(0, new_item)
