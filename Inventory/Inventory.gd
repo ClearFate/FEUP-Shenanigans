@@ -12,7 +12,10 @@ export(Array, Resource) var items = [
 
 func set_item(item_index, item):
 	var previousItem = items[item_index]
-	items[item_index] = item
+	if previousItem is Item && previousItem.name == item.name:
+		previousItem.amount += item.amount
+	else:
+		items[item_index] = item
 	emit_signal("items_changed", [item_index])
 	return previousItem
 	
@@ -62,4 +65,4 @@ func add_item(item_id):
 	if get_item_index(item_id) >= 0:
 		set_item(existing_new_item_index, new_item)
 	else:
-		set_item(1, new_item)
+		set_item(0, new_item)
