@@ -27,6 +27,8 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitboxPivot/SwordHitbox #TODO: REMOVE ALL "sketchy af"
 onready var interactionBox = $InteractionPivot/InteractionBox
 
+const DeathEffect = preload("res://Effects/PlayerDeathEffect.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	stats.connect("no_health", self, "on_death")
@@ -107,8 +109,17 @@ func update_animation_direction_vector(input_vector):
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	
+
+func create_death_effect():
+	var deathEffect = DeathEffect.instance()
+	get_parent().add_child(deathEffect)
+	deathEffect.global_position = global_position
+#   vs
+#	get_parent().add_child(grassEffect)
+#	grassEffect.position = self.position
+
 func on_death():
+	create_death_effect()
 	queue_free()
 	
 func can_move():
