@@ -4,6 +4,9 @@ extends Control
 onready var inventoryContainer = $InventoryContainer
 onready var button = $TextureButton
 
+func _ready():
+	inventoryContainer.visible = false
+
 func _on_TextureButton_pressed():
 	toggle_inventory()
 
