@@ -84,8 +84,16 @@ func get_first_replacement_index(item_id):
 func add_item(item_id):
 	var new_item : Item
 	new_item = load("res://Inventory/Items/" + item_id+ ".tres")
-	var item_slot_index = get_first_replacement_index(item_id)
+	new_item = new_item.duplicate() #items should be unique
+	var item_slot_index = get_first_replacement_index(item_id) #get_first_empty_slot_index() use commented code for testing inventory size/scrolling in display
 	if item_slot_index >= 0:
 		set_item(item_slot_index, new_item)
 	else:
-		set_item(0, new_item)
+		items.push_back(new_item)
+
+func get_curr_slot_size():
+	return items.size()
+
+func expand_item_slots(new_num):
+	if new_num > items.size():
+		items.resize(new_num)
