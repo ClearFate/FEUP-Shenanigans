@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://World/Tree.png" type="Texture" id=12]
 [ext_resource path="res://World/Townsfolk_M_Idle_1.png" type="Texture" id=13]
 [ext_resource path="res://UI/InventoryUI.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UI/DamageUI.tscn" type="PackedScene" id=15]
+[ext_resource path="res://UI/DamageUI.gd" type="Script" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 0, 0 )
@@ -947,3 +949,10 @@ margin_right = -1.0
 margin_bottom = -1.0
 
 [node name="InventoryUI" parent="CanvasLayer" instance=ExtResource( 14 )]
+
+[node name="DamageUI" parent="CanvasLayer" instance=ExtResource( 15 )]
+margin_left = 259.956
+margin_top = 5.24408
+margin_right = -16.0437
+margin_bottom = -148.756
+script = ExtResource( 16 )
