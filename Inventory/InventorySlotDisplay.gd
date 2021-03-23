@@ -53,8 +53,6 @@ func drop_data(_position, data):
 		inventory.swap_items(my_item_index, data.item_index)
 		inventory.set_item(my_item_index, data.item)
 	inventory.drag_data = null
-	
-	
 
 
 func _on_ItemTextureRect_mouse_entered():

@@ -10,6 +10,7 @@ export var ROLL_SPEED = 120
 var roll_vector = Vector2.DOWN
 
 var stats = PlayerStats
+var inventory = preload("res://Inventory/Inventory.tres")
 
 
 enum {
@@ -32,6 +33,7 @@ const DeathEffect = preload("res://Effects/PlayerDeathEffect.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	stats.connect("no_health", self, "on_death")
+#	stats.connect("damage_changed", self, "on_damage_changed")
 	animationTree.active = true
 	swordHitbox.knockback_vector = roll_vector #sketchy af
 
@@ -42,6 +44,19 @@ func _input(event):
 		interactionBox.enable_interaction()
 	elif event.is_action_released("interact"):
 		interactionBox.disable_interaction()
+	
+	elif event.is_action_pressed("use_item_1"):
+		inventory.use_item(1)
+	elif event.is_action_pressed("use_item_2"):
+		inventory.use_item(2)
+	elif event.is_action_pressed("use_item_3"):
+		inventory.use_item(3)
+	elif event.is_action_pressed("use_item_4"):
+		inventory.use_item(4)
+	elif event.is_action_pressed("use_item_5"):
+		inventory.use_item(5)
+	elif event.is_action_pressed("use_item_6"):
+		inventory.use_item(6)
 
 func _physics_process(delta): #use _physics_process if using player position or other player attributes
 	if !can_move():
@@ -120,7 +135,10 @@ func create_death_effect():
 
 func on_death():
 	create_death_effect()
-	queue_free()
+	queue_free()	
+
+#func on_damage_changed(val):
+#	stats.damage = val
 	
 func can_move():
 	return EventHandler.can_world_move()
