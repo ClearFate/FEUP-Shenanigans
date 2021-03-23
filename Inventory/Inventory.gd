@@ -3,6 +3,7 @@ extends Resource
 class_name Inventory
 
 var drag_data = null
+var stats = PlayerStats
 
 signal items_changed(indexes)
 
@@ -48,6 +49,48 @@ func has_item(item_id):
 			ret = true
 			break
 	return ret
+	
+func use_item(index):
+	var item = items[index-1]
+	if item is Item:
+		var item_name = item.id
+		match item_name:
+			"Axe":
+				stats.set_damage(4)
+				remove_item(index-1)
+			"Dagger":
+				stats.set_damage(2)
+				remove_item(index-1)
+			"Sword":
+				stats.set_damage(3)
+				remove_item(index-1)
+			"BasicShield":
+				stats.set_max_health(stats.max_health+1)
+				remove_item(index-1)
+			"FortifiedShield":
+				stats.set_max_health(stats.max_health+2)
+				remove_item(index-1)
+			"SteelShield":
+				stats.set_max_health(stats.max_health+3)
+				remove_item(index-1)
+			"Grapes":
+				stats.heal_health(1)
+				remove_item(index-1)
+			"Kebab":
+				stats.heal_health(5)
+				remove_item(index-1)
+			"Orange":
+				stats.heal_health(2)
+				remove_item(index-1)
+			"MageArmor":
+				stats.set_max_health(stats.max_health+1)
+				remove_item(index-1)
+			"MysticArmor":
+				stats.set_max_health(stats.max_health+2)
+				remove_item(index-1)
+			"PlateArmor":
+				stats.set_max_health(stats.max_health+4)
+				remove_item(index-1)
 
 func get_item_index(item_id):
 	var index = -1
