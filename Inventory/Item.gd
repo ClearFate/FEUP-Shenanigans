@@ -3,6 +3,7 @@ extends Resource
 class_name Item
 
 export(String) var name = ""
+export(String) var id = ""
 export(Texture) var texture 
 var amount = 1
 

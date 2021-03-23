@@ -1,0 +1,13 @@
+{
+    "001": {
+        "name": "Laio",
+        "reward": "none",
+        "text": "i q",
+        "next": "002"
+    },
+    "002": {
+        "name": "Laio",
+        "reward": "sword",
+        "text": "howdy"
+    }
+}

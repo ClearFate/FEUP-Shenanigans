@@ -27,24 +27,25 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitboxPivot/SwordHitbox #TODO: REMOVE ALL "sketchy af"
 onready var interactionBox = $InteractionPivot/InteractionBox
 
+const DeathEffect = preload("res://Effects/PlayerDeathEffect.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	stats.connect("no_health", self, "on_death")
 	animationTree.active = true
 	swordHitbox.knockback_vector = roll_vector #sketchy af
-	
-func _process(_delta):
-	if Input.is_action_pressed("exit_game"):
-		get_tree().quit()
-	
 
-func _input(event):
-	if event.is_action_pressed("interact"):
+
+func _input(event):		
+	if event.is_action_pressed("interact") && can_interact() && state == MOVE:
+		animationState.travel("Idle")
 		interactionBox.enable_interaction()
 	elif event.is_action_released("interact"):
 		interactionBox.disable_interaction()
 
 func _physics_process(delta): #use _physics_process if using player position or other player attributes
+	if !can_move():
+		return
 	match state:
 		MOVE:
 			move_state(delta)
@@ -108,6 +109,21 @@ func update_animation_direction_vector(input_vector):
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	
+
+func create_death_effect():
+	var deathEffect = DeathEffect.instance()
+	get_parent().add_child(deathEffect)
+	deathEffect.global_position = global_position
+#   vs
+#	get_parent().add_child(grassEffect)
+#	grassEffect.position = self.position
+
 func on_death():
+	create_death_effect()
 	queue_free()
+	
+func can_move():
+	return EventHandler.can_world_move()
+	
+func can_interact():
+	return can_move()

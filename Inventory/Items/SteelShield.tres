@@ -5,7 +5,8 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "SteelShield"
+name = "Steel Shield"
+id = "SteelShield"
 texture = ExtResource( 2 )
 heal = 0
 dmg = 0

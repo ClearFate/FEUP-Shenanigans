@@ -1,0 +1,52 @@
+{
+    "start": {
+        "006": {
+            "flag": "killed_john"
+        },
+        "001": {}
+    },
+    "001": {
+        "name": "Laio",
+        "text": "Spare a few drops of coffee for a friend?",
+        "replies": {
+            "002": {
+                "text": "No way, dude"
+            },
+            "005": {
+                "text": "I killed john and you're next if you don't shut up",
+                "item": "body_john"
+            },
+            "003": {
+                "text": "Here you go"
+            },
+            "004": {
+                "text": "*Ignore*"
+            }
+        },
+        "next": "004"
+    },
+    "002": {
+        "name": "Laio",
+        "text": "Thank you anyway"
+    },
+    "003": {
+        "name": "Laio",
+        "reward": "sword",
+        "text": "Thank you so much"
+    },
+    "004": {
+        "name": "Laio",
+        "text": "Fine, ignore me like the rest"
+        
+    },
+    "005": {
+        "name": "Laio",
+        "text": "Now that I think of it, I'm good",
+        "set_flag": "killed_john"
+        
+    },
+    "006": {
+        "name": "Laio",
+        "text": "You murdered my best friend, begone"
+    }
+}

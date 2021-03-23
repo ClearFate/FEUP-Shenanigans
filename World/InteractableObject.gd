@@ -1,23 +1,18 @@
 extends StaticBody2D
 
+enum TYPE { DIALOGUE, ITEM, FLAG, FREE}
+export(TYPE) var interaction_type setget update_type
+export(String) var interaction_val setget update_interaction_val
+export(Texture) var asset setget my_func
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func my_func(tex):
+	asset = tex
+	get_node("Sprite").texture = asset
 
+func update_type(type):
+	interaction_type = type
+	get_node("InteractableBox").interaction_type = self.interaction_type
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_InteractionBox_area_entered(_area):
-	interact()
-
-func interact():
-	queue_free()
+func update_interaction_val(val):
+	interaction_val = val
+	get_node("InteractableBox").interaction_val = self.interaction_val

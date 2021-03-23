@@ -5,7 +5,8 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "MageArmor"
+name = "Mage Armor"
+id = "MageArmor"
 texture = ExtResource( 2 )
 heal = 0
 dmg = 0

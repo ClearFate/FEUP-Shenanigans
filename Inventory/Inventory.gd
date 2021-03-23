@@ -12,7 +12,10 @@ export(Array, Resource) var items = [
 
 func set_item(item_index, item):
 	var previousItem = items[item_index]
-	items[item_index] = item
+	if previousItem is Item && previousItem.id == item.id:
+		previousItem.amount += item.amount
+	else:
+		items[item_index] = item
 	emit_signal("items_changed", [item_index])
 	return previousItem
 	
@@ -37,3 +40,71 @@ func make_items_unique():
 		else: #if its null
 			unique_items.append(null)
 	items = unique_items
+
+func has_item(item_id):
+	var ret = false
+	for item in items:
+		if item is Item && item.id == item_id:
+			ret = true
+			break
+	return ret
+
+func get_item_index(item_id):
+	var index = -1
+	for i in range(items.size()):
+		var item = items[i]
+		if item is Item && item.id == item_id:
+			index = i
+			break
+	return index
+
+
+func get_first_empty_slot_index():
+	var index = -1
+	for i in range(items.size()):
+		var item = items[i]
+		if !(item is Item):
+			index = i
+			break
+	return index
+
+#returns same item index if it exists. If it doesn't, returns the first empty slot's
+#index if inv isn't full. Returns -1 otherwise (inv full, same item doesn't exist)
+func get_first_replacement_index(item_id):
+	var index = -1
+	for i in range(items.size()):
+		var item = items[i]
+		if item is Item && item.id == item_id:
+			index = i
+			break
+		if !(item is Item) && index == -1:
+			index = i
+	return index
+	
+func add_item(item_id):
+	var new_item : Item
+	new_item = load("res://Inventory/Items/" + item_id+ ".tres")
+	new_item = new_item.duplicate() #items should be unique
+	var item_slot_index = get_first_replacement_index(item_id) #get_first_empty_slot_index() use commented code for testing inventory size/scrolling in display
+	if item_slot_index >= 0:
+		set_item(item_slot_index, new_item)
+	else:
+		items.push_back(new_item) #just in case (shouldn't be used in current implementation)
+
+func remove_item_amount(item_id, amount):
+	var index = get_item_index(item_id)
+	if index >= 0:
+		var item = items[index]
+		if item.amount - amount >= 1:
+			item.amount -= amount
+		else:
+			items[index] = null
+	emit_signal("items_changed", [index])
+	return index >= 0
+
+func get_curr_slot_size():
+	return items.size()
+
+func expand_item_slots(new_num):
+	if new_num > items.size():
+		items.resize(new_num)

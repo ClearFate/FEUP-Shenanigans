@@ -1,15 +1,62 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="Control" type="Control"]
+[ext_resource path="res://Dialogue/DialogueBox.gd" type="Script" id=2]
+
+[node name="DialogueBoxController" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = 90.0
+margin_bottom = -5.0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DialogueBox" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_right = 64.0
+margin_bottom = 31.0
+text = "Character:
+Text:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.574219, 0.471792, 0.199631, 1 )
+margin_right = 320.0
+margin_bottom = 88.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 4.0
+margin_top = 6.04862
+margin_right = 315.0
+margin_bottom = 43.0486
+text = "Character:
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 1.0
+margin_top = 40.0
+margin_right = 321.0
+margin_bottom = 85.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnswerBox" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 320.0
+size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
