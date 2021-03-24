@@ -16,8 +16,8 @@ func interact():
 			var flag_name = interaction_val
 			EventHandler.set_flag(flag_name)
 		TYPE.ITEM:
-			var item_name = interaction_val
-			EventHandler.handleItemEvent(item_name)
+			var item_id = interaction_val
+			EventHandler.handleItemEvent(item_id)
 
 
 func _on_InteractableBox_area_entered(area):

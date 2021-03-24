@@ -1,6 +1,9 @@
 {
     "old":{
         "start": {
+            "032": {
+                "flag":"old_heart_attack"
+            },
             "031": {
                 "flag": "old_show_stolen_heirloom"
             },
@@ -42,7 +45,6 @@
             "text": "Can't you see I'm mourning my wife? Don't bother me with that nonsense!"
         },
         "003": {
-            "name": "Old Man",
             "text": "He doesn't seem to notice you. Is he deep in thought... or is it just poor eyesight?"
         },
         "004": {
@@ -61,7 +63,7 @@
             "replies": {
                 "027": {
                     "text": "Hold on. Were you talking about this trinket?",
-                    "item": "wifeHeirloom"
+                    "item": "WifeHeirloom"
                 },
                 "009": {
                     "text": "Sure"
@@ -78,7 +80,7 @@
         "007": {
             "name": "Old Man",
             "text": "It's alright.",
-            "set_flag": "flag quest_flower_refused"
+            "set_flag": "quest_flower_refused"
         },
         "008": {
             "name": "Old Man",
@@ -98,13 +100,12 @@
                     "no_flag": "old_asked_creatures"
                 },
                 "016": {
-                    "text": "This flower?",
-                    "item": "specialFlower"
+                    "text": "I already have it",
+                    "item": "SpecialFlower"
                 },
                 "018": {
                     "text": "Actually, Dog Dude got one for you",
-                    "flag": "flower_dd"
-                    
+                    "flag": "flower_dd"                    
                 },
                 "012": {
                     "text": "Yeah, no problem"
@@ -154,31 +155,147 @@
                 }
             }
         },
-        "100": {
+        "014": {
             "name": "Old Man",
-            "text": "You... you monster!",
-            "set_flag": "ate_kebab",
-            "remove_item": "Kebab",
-            "reward":"iq"
-        },
-        "099": {
-            "name": "Old Man",
-            "text": "Hmmm. I smell kebab. Did you take it from my stash?",
+            "text": "Do you have the flower?",
             "replies": {
-                "008": {
-                    "text": "Kebab? What Kebab? (Lie)"
+                "017": {
+                    "text": "Here you go",
+                    "item": "SpecialFlower"
                 },
-                "005": {
-                    "text": "Yes, and I'm gonna eat it",
-                    "item": "Kebab"
+                "018": {
+                    "text": "Actually, Dog Dude got one for you",
+                    "flag": "flower_dd"
                 },
-                "003": {
-                    "text": "Here you go"
-                },
-                "004": {
-                    "text": "(Ignore)"
+                "015": {
+                    "text": "Not yet"
                 }
             }
+        },
+        "015": {
+            "name": "Old Man",
+            "text": "Be safe, I won't go anywhere!"
+        },
+        "016": {
+            "name": "Old Man",
+            "text": "You've got it already?!",
+            "next": "017"
+        },
+        "017": {
+            "name": "Old Man",
+            "text": "Thank you so much! You don't know how much this means to me... Here, this ain't much, but it's all I have!",
+            "reward": "DogTreat",
+            "set_flag":"quest_flower_completed"
+        },
+        "018": {
+            "name": "Old Man",
+            "text": "Thank you so much! You don't know how much this means to me... Here, this ain't much, but it's all I have!",
+            "set_flag":"reconciled_old_dd",
+            "next": "017"
+        },
+        "019": {
+            "name": "Old Man",
+            "text": "Pleased to see you! How can I help?",
+            "replies": {
+                "027": {
+                    "text": "Hey, is this your wife's pendant?",
+                    "item": "WifeHeirloom"
+                },
+                "020": {
+                    "text": "Have you heard about a machine nearby?"
+                },
+                "021": {
+                    "text": "TODO"
+                }
+            }
+        },
+        "020": {
+            "name": "Old Man",
+            "text": "TODO: machine whereabouts"
+        },
+        "021": {
+            "name": "Old Man",
+            "text": "TODO: wife stuff"
+        },
+        "022": {
+            "name": "Old Man",
+            "text": "Thank you. I've been mad at him... Them, for too long. How can I help you?",
+            "replies": {
+                "027": {
+                    "text": "Hey, is this your wife's pendant?",
+                    "item": "WifeHeirloom"
+                },
+                "020": {
+                    "text": "Have you heard about a machine nearby?"
+                },
+                "023": {
+                    "text": "TODO: wife or reconciled question"
+                }
+            }
+        },
+        "023": {
+            "name": "Old Man",
+            "text": "Todo: wife or reconciled reply"
+        },
+        "024": {
+            "name": "Old Man",
+            "text": "That rotten bastard... And his beast... They will burn in hell!",
+            "replies": {
+                "030": {
+                    "text": "Hey, is this your wife's pendant?",
+                    "item": "WifeHeirloom"
+                },
+                "025": {
+                    "text": "Have you heard about a machine nearby?"
+                },
+                "026": {
+                    "text": "TODO: wife or mad question"
+                }
+            }
+        },
+        "025": {
+            "name": "Old Man",
+            "text": "Todo: pissed off machine reply"
+        },
+        "026": {
+            "name": "Old Man",
+            "text": "Todo: wife or mad reply"
+        },
+        "027": {
+            "name": "Old Man",
+            "text": "You... You monster. Give it to me, that's not yours to take!",
+            "set_flag": "old_show_stolen_heirloom",
+            "replies": {
+                "028": {
+                    "text": "I am so sorry, here you go"
+                },
+                "029": {
+                    "text": "Nope, it's mine now"
+                }
+            }
+        },
+        "028": {
+            "name": "Old Man",
+            "text": "My poor Josefa's rest disturbed... I will never forgive you, begone!",
+            "remove_item": "WifeHeirloom"
+        },
+        "029": {
+            "name": "Old Man",
+            "text": "No! I won't let y... My heart... I can't..... (dies)",
+            "set_flag": "old_heart_attack"
+        },
+        "030": {
+            "name": "Old Man",
+            "text": "What?! And you made me blame it all on poor Dog Dude?!",
+            "set_flag": "reconciled_old_dd",
+            "next": "27"
+        },
+        "031": {
+            "name": "Old Man",
+            "text": "Begone! I don't want to see you again!"
+        },
+        "032": {
+            "text": "He isn't moving... nor breathing."
         }
     },
     "bush":{

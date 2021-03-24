@@ -918,18 +918,24 @@ position = Vector2( 190, -51 )
 
 [node name="InteractableObject" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 291, -69 )
-interaction_val = "guy"
+interaction_val = "old"
+asset = ExtResource( 13 )
+
+[node name="InteractableObject4" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( 318.718, -142.075 )
+interaction_val = "old"
 asset = ExtResource( 13 )
 
 [node name="InteractableObject3" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 202.276, -130.352 )
 interaction_type = 1
-interaction_val = "Kebab"
+interaction_val = "WifeHeirloom"
 asset = ExtResource( 12 )
 
 [node name="InteractableObject2" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 92, -77 )
-interaction_val = "bush"
+interaction_type = 1
+interaction_val = "SpecialFlower"
 asset = ExtResource( 10 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
