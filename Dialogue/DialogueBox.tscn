@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://PixelatedFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Dialogue/DialogueBox.gd" type="Script" id=2]
 
 [node name="DialogueBoxController" type="Control"]
@@ -36,7 +37,8 @@ __meta__ = {
 margin_left = 4.0
 margin_top = 6.04862
 margin_right = 315.0
-margin_bottom = 43.0486
+margin_bottom = 88.0486
+custom_fonts/normal_font = ExtResource( 1 )
 text = "Character:
 "
 scroll_active = false

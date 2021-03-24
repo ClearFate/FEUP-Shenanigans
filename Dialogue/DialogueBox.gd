@@ -11,6 +11,7 @@ func _ready():
 	EventHandler.connect("end_dialogue", self, "close_dialogue_box")
 	EventHandler.connect("update_dialogue", self, "update_dialogue_box")
 	visible = false
+	answerBox.get_parent().visible = false
 
 #func init_dialogue_box(conversation):
 #	update_dialogue_box(conversation)
@@ -31,6 +32,7 @@ func update_dialogue_box(conversation):
 func init_answer_box(conversation):
 	remove_replies()
 	if conversation.has("replies"):
+		answerBox.get_parent().visible = true
 		var replies = conversation["replies"]
 		for key in replies:
 			var curr_reply = replies[key]

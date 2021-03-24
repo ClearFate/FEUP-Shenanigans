@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Dialogue/ReplyButton.gd" type="Script" id=1]
+[ext_resource path="res://PixelatedFont.tres" type="DynamicFont" id=2]
 
 [node name="Button" type="Button"]
 margin_right = 131.0
 margin_bottom = 20.0
+custom_fonts/font = ExtResource( 2 )
 text = "You will regret this"
 script = ExtResource( 1 )
 __meta__ = {
