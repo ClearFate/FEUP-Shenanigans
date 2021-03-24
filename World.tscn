@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://UI/InventoryUI.tscn" type="PackedScene" id=14]
 [ext_resource path="res://UI/DamageUI.tscn" type="PackedScene" id=15]
 [ext_resource path="res://UI/DamageUI.gd" type="Script" id=16]
+[ext_resource path="res://Inventory/EquipmentUI.tscn" type="PackedScene" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 0, 0 )
@@ -951,8 +952,14 @@ margin_bottom = -1.0
 [node name="InventoryUI" parent="CanvasLayer" instance=ExtResource( 14 )]
 
 [node name="DamageUI" parent="CanvasLayer" instance=ExtResource( 15 )]
-margin_left = 259.956
-margin_top = 5.24408
-margin_right = -16.0437
-margin_bottom = -148.756
+margin_left = 3.45599
+margin_top = 16.7441
+margin_right = -272.544
+margin_bottom = -137.256
 script = ExtResource( 16 )
+
+[node name="EquipmentUI" parent="CanvasLayer" instance=ExtResource( 17 )]
+margin_left = 247.0
+margin_top = 2.5
+margin_right = 289.0
+margin_bottom = 31.5

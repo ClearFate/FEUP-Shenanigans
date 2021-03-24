@@ -8,6 +8,7 @@ script = ExtResource( 1 )
 name = "Orange"
 id = "Orange"
 texture = ExtResource( 2 )
+equippable = false
 heal = 1
 dmg = 0
 durability = 0
