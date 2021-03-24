@@ -22,13 +22,15 @@ var curr_conversation_id
 var gave_item = false #true when a dialogue option resulted in a reward, false otherwise
 #used to give the item received message before resuming the dialogue
 
+var has_replies = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 	
 func _input(event):
 	if state == DIALOGUE:
-		if event.is_action_pressed("ui_accept"):
+		if event.is_action_pressed("ui_accept") && !has_replies:
 			next_dialogue()
 	elif Input.is_action_pressed("exit_game"):
 		reset_flags()
@@ -69,6 +71,7 @@ func handle_reply(next_id):
 	update_dialogue()
 
 func update_dialogue():
+	has_replies = false
 	if curr_conversation_id == "end":
 		end_dialogue()
 	else:
@@ -86,6 +89,8 @@ func update_dialogue():
 			if curr_conversation.has("set_flag"):
 				set_flag(curr_conversation["set_flag"])
 			trim_branching_replies(curr_conversation)
+			if curr_conversation.has("replies"):
+				has_replies = true
 			emit_signal("update_dialogue", curr_conversation)
 		
 func end_dialogue():
