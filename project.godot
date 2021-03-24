@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Dialogue/DialogueAction.gd"
 }, {
 "base": "Resource",
+"class": "Equipment",
+"language": "GDScript",
+"path": "res://Inventory/Equipment.gd"
+}, {
+"base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
 "path": "res://Inventory/Inventory.gd"
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "DialogueAction": "",
+"Equipment": "",
 "Inventory": "",
 "Item": ""
 }

@@ -47,9 +47,9 @@ __meta__ = {
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-margin_left = 1.0
+margin_left = 5.0
 margin_top = 40.0
-margin_right = 321.0
+margin_right = 316.0
 margin_bottom = 85.0
 scroll_horizontal_enabled = false
 __meta__ = {
@@ -57,7 +57,7 @@ __meta__ = {
 }
 
 [node name="AnswerBox" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 320.0
+margin_right = 311.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
