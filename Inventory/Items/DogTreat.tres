@@ -8,6 +8,7 @@ script = ExtResource( 1 )
 name = "Dog Treat"
 id = "DogTreat"
 texture = ExtResource( 2 )
+equippable = false
 heal = 0
 dmg = 0
 durability = 0

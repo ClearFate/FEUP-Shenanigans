@@ -8,6 +8,7 @@ script = ExtResource( 1 )
 name = "Sword"
 id = "Sword"
 texture = ExtResource( 2 )
+equippable = true
 heal = 0
 dmg = 3
 durability = 0
