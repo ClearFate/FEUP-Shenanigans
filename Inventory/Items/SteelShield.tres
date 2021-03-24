@@ -8,6 +8,7 @@ script = ExtResource( 1 )
 name = "Steel Shield"
 id = "SteelShield"
 texture = ExtResource( 2 )
+equippable = true
 heal = 0
 dmg = 0
 durability = 5

@@ -49,7 +49,7 @@ func drop_data(_position, data):
 	var my_item_index = get_index()
 	var my_item = inventory.items[my_item_index]
 	if data.origin == "equip":
-		equipment.remove_item(data.item_index)
+#		equipment.remove_item(data.item_index)
 		print("data-use: "+ str(data.use))
 		var new_item_index = inventory.add_item(data.item.id)
 		print("new item:" + str(new_item_index))

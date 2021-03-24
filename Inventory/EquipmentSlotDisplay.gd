@@ -62,7 +62,16 @@ func drop_data(_position, data):
 			inventory.set_item( data.item_index , my_item)
 #		print("data-use: "+ str(data.use))
 		if data.item != null:
-			equipment.set_item( my_item_index , data.item)
+			if data.item.equippable:
+#				var equip_index = 0 
+#				if data.item.dmg == 0:
+#					equip_index = 1
+				
+				equipment.set_item( my_item_index , data.item)
+#				equipment.set_item( equip_index , data.item)  # automatically decides for user whats correct equip spot
+			else:
+				inventory.set_item( data.item_index , data.item)
+			
 #		print(new_item_index)
 		inventory.drag_data = null
 	equipment.drag_data = null
