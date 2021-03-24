@@ -1,48 +1,168 @@
 {
-    "guy":{
+    "old":{
         "start": {
-            "007": {
-                "flag": "ate_kebab"
+            "031": {
+                "flag": "old_show_stolen_heirloom"
             },
-            "006": {
-                "item": "Kebab"
+            "024": {
+                "flag": "mad_old_dd"
+            },
+            "022": {
+                "flag": "reconciled_old_dd"
+            },
+            "019": {
+                "flag": "quest_flower_completed"
+            },
+            "014": {
+                "flag": "quest_flower_accepted"
+            },
+            "013": {
+                "flag": "quest_flower_refused"
             },
             "001": {}
         },
         "001": {
-            "name": "Laio",
-            "text": "Spare a few drops of coffee for a friend?",
+            "name": "Old Man",
+            "text": "Oh, my beautiful Josefa, why did you have to leave me so soon?",
             "replies": {
                 "002": {
-                    "text": "I don't have any coffee"
+                    "text": "Hi! Have you heard about a nearby vending machine? "
                 },
                 "004": {
-                    "text": "*Ignore*"
+                    "text": "What happened to your wife?"
+                },
+                "003": {
+                    "text": "(Ignore)"
                 }
             },
-            "next": "004"
+            "next": "003"
         },
         "002": {
-            "name": "Laio",
-            "text": "Thank you anyway"
+            "name": "Old Man",
+            "text": "Can't you see I'm mourning my wife? Don't bother me with that nonsense!"
         },
         "003": {
-            "name": "Laio",
-            "reward": "Sword",
-            "text": "Thank you so much"
+            "name": "Old Man",
+            "text": "He doesn't seem to notice you. Is he deep in thought... or is it just poor eyesight?"
         },
         "004": {
-            "name": "Laio",
-            "text": "Fine, ignore me like the rest"
+            "name": "Old Man",
+            "text": "She was walking a boy's dog, and the wretched beast ran away. My wife went after it and a few hours later the dog came back, unharmed, while my wife was nowhere in sight.",
+            "next": "005"
         },
         "005": {
-            "name": "Laio",
-            "text": "You... you monster!",
-            "set_flag": "ate_kebab",
-            "remove_item": "Kebab"
+            "name": "Old Man",
+            "text": "Later I found her, dead. The place was crawling with monsters, but I managed to bring back her body. She now rests dressed in her finest dress, with her beautiful family pendant at her neck.",
+            "next": "006"
         },
         "006": {
-            "name": "Laio",
+            "name": "Old Man",
+            "text": "May I ask something of you?",
+            "replies": {
+                "027": {
+                    "text": "Hold on. Were you talking about this trinket?",
+                    "item": "wifeHeirloom"
+                },
+                "009": {
+                    "text": "Sure"
+                    
+                },
+                "007": {
+                    "text": "No"
+                },
+                "008": {
+                    "text": "I don't care"
+                }
+            }
+        },
+        "007": {
+            "name": "Old Man",
+            "text": "It's alright.",
+            "set_flag": "flag quest_flower_refused"
+        },
+        "008": {
+            "name": "Old Man",
+            "text": "How rude... Nevermind, then.",
+            "set_flag": "quest_flower_refused"
+        },
+        "009": {
+            "name": "Old Man",
+            "text": "You seem like a capable individual. Would you mind picking up a certain flower for me?",
+            "replies": {
+                "010": {
+                    "text": "What's so special about this flower?",
+                    "no_flag": "old_asked_special"
+                },
+                "011": {
+                    "text": "Why don't you get it yourself?",
+                    "no_flag": "old_asked_creatures"
+                },
+                "016": {
+                    "text": "This flower?",
+                    "item": "specialFlower"
+                },
+                "018": {
+                    "text": "Actually, Dog Dude got one for you",
+                    "flag": "flower_dd"
+                    
+                },
+                "012": {
+                    "text": "Yeah, no problem"
+                },
+                "007": {
+                    "text": "I can't"
+                },
+                "008":{
+                    "text": "I don't care"
+                }
+            }
+        },
+        "010": {
+            "name": "Old Man",
+            "text": "It's my late wife's favorite flower. I'd like to place it in her grave...",
+            "set_flag": "old_asked_special",
+            "next": "009"
+            
+        },
+        "011": {
+            "name": "Old Man",
+            "text": "I know where they grow, but the place's infested by vile creatures and I'm a frail, old man.",
+            "set_flag": "old_asked_creatures",
+            "next": "009"
+        },
+        "012": {
+            "name": "Old Man",
+            "text": "Oh, thank you so much. Josefa would be so pleased!",
+            "set_flag": "quest_flower_accepted"
+        },
+        "013": {
+            "name": "Old Man",
+            "text": "Have you reconsidered?",
+            "replies": {
+                "009": {
+                    "text": "Yes"
+                },
+                "002": {
+                    "text": "Have you heard about a nearby vending machine?"
+                },
+                "004": {
+                    "text": "Could you tell me about your wife again?"
+                },
+                "008": {
+                    "text": "(Ignore)"
+                    
+                }
+            }
+        },
+        "100": {
+            "name": "Old Man",
+            "text": "You... you monster!",
+            "set_flag": "ate_kebab",
+            "remove_item": "Kebab",
+            "reward":"iq"
+        },
+        "099": {
+            "name": "Old Man",
             "text": "Hmmm. I smell kebab. Did you take it from my stash?",
             "replies": {
                 "008": {
@@ -56,17 +176,9 @@
                     "text": "Here you go"
                 },
                 "004": {
-                    "text": "*Ignore*"
+                    "text": "(Ignore)"
                 }
             }
-        },
-        "007": {
-            "name": "Laio",
-            "text": "You bastard, you ate my kebab... Go away!"
-        },
-        "008": {
-            "name": "Laio",
-            "text": "You should probably take a shower, then"
         }
     },
     "bush":{
