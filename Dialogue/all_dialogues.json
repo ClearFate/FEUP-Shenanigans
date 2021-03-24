@@ -185,7 +185,8 @@
             "name": "Old Man",
             "text": "Thank you so much! You don't know how much this means to me... Here, this ain't much, but it's all I have!",
             "reward": "DogTreat",
-            "set_flag":"quest_flower_completed"
+            "set_flag":"quest_flower_completed",
+            "remove_item":"SpecialFlower"
         },
         "018": {
             "name": "Old Man",
