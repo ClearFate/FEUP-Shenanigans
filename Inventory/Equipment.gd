@@ -7,16 +7,67 @@ var stats = PlayerStats
 
 signal equipment_changed(indexes)
 
+	
+
 export(Array, Resource) var items = [
 	null, null
-]
+] #setget handle_equipment_change
+
+#func handle_equipment_change(new_items):
+#	print("handle_equip_change")
+#	var old_val = items[0]
+#	var new_val = new_items[0]
+#	var old_val2 = items[1]
+#	var new_val2 = new_items[1]
+#	if old_val != new_val:
+#		if new_val == null:
+#			stats.set_damage(1)
+#		else:
+#			stats.set_damage(new_val.dmg)
+	
+	
+#	var old_val = items[1]
+#	var new_val = new_items[1]
+#	if items[0] == new_items[0]:
+#		new_val = new_items[0]
+#		old_val = items[0]
+#	if new_val == null:
+	# so i check if its from smth to null (i removed item)
+	# if from null to smth (i equipped item)
+	# null to null do nothing
+	# smth to smth -> calculate a difference ?
+#		pass
+
+func update_stats_on_remove(item):
+	if item != null:
+		if item.durability == 0:
+			stats.damage -= item.dmg 
+		else:
+			stats.max_health -= item.durability
+	
+
+func update_stats_on_set(prev_item, item):
+	if prev_item != item:
+		if item == null:
+			update_stats_on_remove(prev_item)
+		else:
+			if item.dmg == 0:
+				stats.max_health += item.durability
+				if prev_item != null:
+					stats.max_health -= prev_item.durability
+			else:
+				stats.damage += item.dmg
+				if prev_item != null:
+					stats.damage -= prev_item.dmg
 
 func set_item(item_index, item):
 	var previousItem = items[item_index]
+	update_stats_on_set(previousItem, item)
 	if previousItem is Item && previousItem.id == item.id:
 		previousItem.amount += item.amount
 	else:
 		items[item_index] = item
+		
 	emit_signal("equipment_changed", [item_index])
 #	print(item.id)
 	return previousItem
@@ -30,6 +81,7 @@ func swap_items(item_index, target_item_index):
 	
 func remove_item(item_index):
 	var previousItem = items[item_index]
+	update_stats_on_remove(previousItem)
 	items[item_index] = null
 	emit_signal("equipment_changed", [item_index])
 	return previousItem

@@ -2,6 +2,7 @@ extends CenterContainer
 
 signal show_tooltip(position, text)
 signal hide_tooltip()
+signal equipment_changed(index)
 
 var inventory = preload("res://Inventory/Inventory.tres")
 var equipment = preload("res://Inventory/Equipment.tres")
@@ -54,6 +55,7 @@ func drop_data(_position, data):
 	var my_item = equipment.items[my_item_index]
 	if data.origin == "equip":
 		equipment.set_item(data.item_index, data.item)
+#		PlayerStats.damage = min(1, data.item.dmg)
 		
 	else:
 		var equip_index = 0 
@@ -67,6 +69,7 @@ func drop_data(_position, data):
 			
 		if curr_equip_item != null:
 			inventory.set_item( data.item_index , curr_equip_item)
+#			PlayerStats.damage = min(1, curr_equip_item.dmg)
 			
 #		print("data-use: "+ str(data.use))
 		if data.item != null:

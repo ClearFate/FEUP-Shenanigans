@@ -8,6 +8,7 @@ script = ExtResource( 1 )
 name = "Dagger"
 id = "Dagger"
 texture = ExtResource( 2 )
+equippable = true
 heal = 0
 dmg = 2
 durability = 0
