@@ -113,6 +113,8 @@ func trim_branching_options(options):
 		var option = options[key]
 		if option.has("flag") && !check_flag(option["flag"]):
 			options.erase(key)
+		if option.has("no_flag") && check_flag(option["no_flag"]):
+			options.erase(key)
 		if option.has("item") && !has_item(option["item"]):
 			options.erase(key)
 
