@@ -4,6 +4,8 @@ enum TYPE { DIALOGUE, ITEM, FLAG, FREE}
 export(TYPE) var interaction_type = TYPE.DIALOGUE
 export(String) var interaction_val = "branching_dialogue"
 
+signal handle_interaction(type)
+
 func interact():
 	match interaction_type:
 		TYPE.DIALOGUE:
@@ -18,6 +20,7 @@ func interact():
 		TYPE.ITEM:
 			var item_id = interaction_val
 			EventHandler.handleItemEvent(item_id)
+			emit_signal("handle_interaction", interaction_type)
 
 
 func _on_InteractableBox_area_entered(area):
