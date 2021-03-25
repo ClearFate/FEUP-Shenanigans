@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://UI/DamageUI.tscn" type="PackedScene" id=18]
 [ext_resource path="res://UI/DamageUI.gd" type="Script" id=19]
 [ext_resource path="res://Inventory/EquipmentUI.tscn" type="PackedScene" id=20]
+[ext_resource path="res://old_man.png" type="Texture" id=21]
+[ext_resource path="res://shady_guy2.png" type="Texture" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 0, 0 )
@@ -924,12 +926,18 @@ position = Vector2( 230.589, -3.21669 )
 [node name="InteractableObject" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 313.619, -136.407 )
 interaction_val = "old"
-asset = ExtResource( 13 )
+asset = ExtResource( 21 )
+
+[node name="Sprite" parent="YSort/Trees/InteractableObject" index="1"]
+texture = ExtResource( 21 )
 
 [node name="InteractableObject4" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 73.1298, -264.866 )
 interaction_val = "old"
 asset = ExtResource( 13 )
+
+[node name="Sprite" parent="YSort/Trees/InteractableObject4" index="1"]
+texture = ExtResource( 22 )
 
 [node name="InteractableObject3" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -81.7069, 2.09853 )
@@ -962,18 +970,6 @@ margin_bottom = -1.0
 
 [node name="InventoryUI" parent="CanvasLayer" instance=ExtResource( 14 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
-volume_db = -10.0
-autoplay = true
-script = ExtResource( 17 )
-[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
-
-[editable path="YSort/Trees/InteractableObject"]
-
-[editable path="YSort/Trees/InteractableObject4"]
-
-[editable path="YSort/Trees/InteractableObject3"]
 [node name="DamageUI" parent="CanvasLayer" instance=ExtResource( 18 )]
 margin_left = 3.45599
 margin_top = 16.7441
@@ -986,3 +982,16 @@ margin_left = 247.0
 margin_top = 2.5
 margin_right = 289.0
 margin_bottom = 31.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -10.0
+autoplay = true
+script = ExtResource( 17 )
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
+
+[editable path="YSort/Trees/InteractableObject"]
+
+[editable path="YSort/Trees/InteractableObject4"]
+
+[editable path="YSort/Trees/InteractableObject3"]
