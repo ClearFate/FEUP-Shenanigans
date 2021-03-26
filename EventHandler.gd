@@ -63,14 +63,13 @@ func begin_dialogue():
 func next_dialogue():
 	if !gave_item:
 		curr_conversation_id = get_next_conversation_id()
-		if "branch" in curr_conversation_id:
-			var branch_conv = get_curr_conversation()
-			choose_branch_conversation(branch_conv)
+		handle_branch_node()
 	update_dialogue()
 	
 
 func handle_reply(next_id):
 	curr_conversation_id = next_id
+	handle_branch_node()
 	update_dialogue()
 
 func update_dialogue():
@@ -142,6 +141,11 @@ func choose_branch_conversation(branch_conv):
 	if !branch_conv.empty():
 		var options = branch_conv.keys()
 		curr_conversation_id = options[0]
+
+func handle_branch_node():
+	if "branch" in curr_conversation_id:
+			var branch_conv = get_curr_conversation()
+			choose_branch_conversation(branch_conv)
 
 #checks if the flag is true (in the flags.cfg file)
 func check_flag(flag):
