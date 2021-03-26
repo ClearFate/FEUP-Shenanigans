@@ -767,6 +767,13 @@
         "007": {
             "text": "It's hard to miss the hole you dug and, from where you stand, you can see Josefa's skeleton, covered in her tattered dress."
         }
-
+    },
+    "machine": {
+        "start": {
+            "001": {}
+        },
+        "001": {
+            "text": "Before you stands a vending machine. Unfortunately, it's a snack machine and therefore not the one you're looking for. "
+        }
     }
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Inventory/EquipmentUI.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Inventory/Items/dog.png" type="Texture" id=21]
 [ext_resource path="res://World/EventTriggerArea.tscn" type="PackedScene" id=22]
+[ext_resource path="res://World/Full Vending Machine.png" type="Texture" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 0, 0 )
@@ -816,7 +817,7 @@ points = PoolVector2Array( 8, 32, 0, 32, 0, 0, 32, 0, 32, 8, 8, 8, 8, 32 )
 
 [sub_resource type="CapsuleShape2D" id=87]
 radius = 239.858
-height = 383.366
+height = 751.104
 
 [node name="World" type="Node2D"]
 
@@ -975,6 +976,27 @@ interaction_type = 1
 interaction_val = "SpecialFlower"
 asset = ExtResource( 10 )
 
+[node name="InteractableObject2" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( -449.278, -22.7077 )
+interaction_val = "machine"
+
+[node name="Shadow" parent="YSort/Trees/InteractableObject2" index="0"]
+visible = true
+position = Vector2( 0.883915, -1.67039 )
+scale = Vector2( 1.05581, 1.26565 )
+
+[node name="Sprite" parent="YSort/Trees/InteractableObject2" index="1"]
+position = Vector2( 0.0631406, -33.3404 )
+texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" parent="YSort/Trees/InteractableObject2" index="2"]
+position = Vector2( 1, -5 )
+scale = Vector2( 2, 3 )
+
+[node name="InteractableBox" parent="YSort/Trees/InteractableObject2" index="3"]
+position = Vector2( 2, -2 )
+scale = Vector2( 2.3, 0.8 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 8 )]
@@ -1012,6 +1034,7 @@ autoplay = true
 script = ExtResource( 17 )
 
 [node name="Node2D" type="Node2D" parent="."]
+visible = false
 
 [node name="EventTriggerArea" parent="Node2D" instance=ExtResource( 22 )]
 position = Vector2( -487.97, -164.084 )
@@ -1019,6 +1042,15 @@ interaction_val = "grave"
 
 [node name="CollisionShape2D" parent="Node2D/EventTriggerArea" index="0"]
 position = Vector2( 36.7695, -46.669 )
+shape = SubResource( 87 )
+
+[node name="EventTriggerArea2" parent="Node2D" instance=ExtResource( 22 )]
+position = Vector2( -487.97, -164.084 )
+interaction_val = "grave"
+
+[node name="CollisionShape2D" parent="Node2D/EventTriggerArea2" index="0"]
+position = Vector2( 711.349, -429.921 )
+rotation = 1.5708
 shape = SubResource( 87 )
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
 
@@ -1036,4 +1068,8 @@ shape = SubResource( 87 )
 
 [editable path="YSort/Trees/Spritz/InteractableBox"]
 
+[editable path="YSort/Trees/InteractableObject2"]
+
 [editable path="Node2D/EventTriggerArea"]
+
+[editable path="Node2D/EventTriggerArea2"]
