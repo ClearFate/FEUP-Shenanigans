@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Fonts/Pixellettersfull-BnJ5.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://UI/swords_clash.png" type="Texture" id=2]
+[ext_resource path="res://UI/sword.png" type="Texture" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
