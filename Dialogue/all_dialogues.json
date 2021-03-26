@@ -303,6 +303,9 @@
     },
     "dd": {
         "start": {
+            "038": {
+                "flag": "dd_return_dog"
+            },
             "035": {
                 "flag": "dd_borrow_dog"
             },
@@ -329,6 +332,7 @@
         "001": {
             "name": "Dog Dude",
             "text": "Hey, I'm Dog Dude, and this is my lovely dog, Spritz.",
+            "set_flag": "dd_meet",
             "replies": {
                 "011": {
                     "text": "Hey, isn't that the dog who killed the old man's wife?",
@@ -650,36 +654,57 @@
         },
         "035":{
             "name":"Dog Dude",
-            "text": "Hey, gimme Spritz",
-            "visibility": "Spritz",
-            "remove_item": "Dog"
+            "text": "Don't forget to return Spritz!",
+            "replies": {
+                "036": {
+                    "text": "I don't need him anymore, here you go",
+                    "flag": "dd_return_dog"
+                },
+                "037": {
+                    "text": "I still need him"
+                }
+            }
+        },
+        "036": {
+            "name": "Dog Dude",
+            "text": "Thank you. I hope he was able to help!",
+            "set_flag": "dd_return_dog",
+            "remove_item": "Dog",
+            "visibility": "Spritz"
+        },
+        "037": {
+            "name": "Dog Dude",
+            "text": "No worries, just don't forget to bring him back!"
+        },
+        "038":{
+            "name": "Dog Dude",
+            "text": "Do you need Fritz's assistance again?",
+            "replies": {
+                "027": {
+                    "text": "Actually, I do"
+                },
+                "end": {
+                    "text": "Not really"
+                }
+            }
         }
 
         
     },
-    "bush":{
+    "dog":{
+        "start":{
+            "002":{
+                "flag":"dd_meet"
+            },
+            "001": {}
+        },
         "001": {
-            "name": "Laio",
-            "text": "i q",
-            "next": "branch001"
+            "name": "Dog",
+            "text": "WOOF"
         },
         "002": {
-            "name": "Laio",
-            "text": "howdy"
-        },
-        "003": {
-            "name": "Laio",
-            "text": "Cool Sword"
-        },
-        "004": {
-            "name": "AHAHAHAHAHAH",
-            "text": "NAB"
-        },
-        "branch001": {
-            "003": {
-                "item": "Sword"
-            },
-            "004": {}
+            "name": "Spritz",
+            "text": "WOOF WOOF"
         }
     }
 }

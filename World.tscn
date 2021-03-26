@@ -945,7 +945,7 @@ texture = ExtResource( 12 )
 
 [node name="Spritz" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 92.3161, -261.414 )
-interaction_val = "bush"
+interaction_val = "dog"
 hideable = true
 id = "Spritz"
 
