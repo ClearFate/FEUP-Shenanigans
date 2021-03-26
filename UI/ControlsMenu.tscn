@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Fonts/Pixellettersfull-BnJ5.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/Button.tscn" type="PackedScene" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Keys/shift.png" type="Texture" id=12]
 [ext_resource path="res://Keys/e.png" type="Texture" id=13]
 [ext_resource path="res://Keys/spc.png" type="Texture" id=14]
+[ext_resource path="res://Keys/left_click.png" type="Texture" id=15]
+[ext_resource path="res://Keys/esc.png" type="Texture" id=16]
+[ext_resource path="res://Keys/i.png" type="Texture" id=17]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.302673, 0.667969, 0.522421, 1, 0.222168, 0.691391, 0.875, 1 )
@@ -38,9 +41,9 @@ anchor_top = -0.00262188
 anchor_right = 1.0
 anchor_bottom = 0.997378
 margin_left = -0.943863
-margin_top = -0.297291
+margin_top = -0.797291
 margin_right = -0.943848
-margin_bottom = -0.297272
+margin_bottom = -0.797272
 texture = SubResource( 2 )
 expand = true
 __meta__ = {
@@ -74,9 +77,9 @@ __meta__ = {
 }
 
 [node name="lblMove" parent="." instance=ExtResource( 4 )]
-margin_left = 85.0
+margin_left = 20.0
 margin_top = 55.0
-margin_right = 125.0
+margin_right = 60.0
 margin_bottom = 69.0
 text = "Move"
 
@@ -113,9 +116,9 @@ position = Vector2( 92.6745, 6.51336 )
 texture = ExtResource( 5 )
 
 [node name="lblRoll" parent="." instance=ExtResource( 4 )]
-margin_left = 85.0
+margin_left = 20.0
 margin_top = 95.0
-margin_right = 125.0
+margin_right = 60.0
 margin_bottom = 109.0
 text = "Roll"
 
@@ -124,9 +127,9 @@ position = Vector2( 72.086, 6.25019 )
 texture = ExtResource( 12 )
 
 [node name="lblAttack" parent="." instance=ExtResource( 4 )]
-margin_left = 85.0
+margin_left = 20.0
 margin_top = 115.0
-margin_right = 125.0
+margin_right = 60.0
 margin_bottom = 129.0
 text = "Attack"
 
@@ -135,12 +138,56 @@ position = Vector2( 71.8453, 5.81712 )
 texture = ExtResource( 14 )
 
 [node name="lblInteract" parent="." instance=ExtResource( 4 )]
-margin_left = 85.0
+margin_left = 20.0
 margin_top = 75.0
-margin_right = 127.0
+margin_right = 62.0
 margin_bottom = 89.0
 text = "Interact"
 
 [node name="e" type="Sprite" parent="lblInteract"]
 position = Vector2( 72.3206, 6.62913 )
 texture = ExtResource( 13 )
+
+[node name="lblInvent" parent="." instance=ExtResource( 4 )]
+margin_left = 170.0
+margin_top = 55.0
+margin_right = 259.0
+margin_bottom = 69.0
+text = "Toggle Inventory"
+
+[node name="i" type="Sprite" parent="lblInvent"]
+position = Vector2( 106.945, 5.80466 )
+texture = ExtResource( 17 )
+
+[node name="lblDialogue" parent="." instance=ExtResource( 4 )]
+margin_left = 127.0
+margin_top = 75.0
+margin_right = 261.0
+margin_bottom = 89.0
+text = "Confirm dialogue options"
+
+[node name="left_click" type="Sprite" parent="lblDialogue"]
+position = Vector2( 150.5, 5.5 )
+texture = ExtResource( 15 )
+
+[node name="lblDragNDrop" parent="." instance=ExtResource( 4 )]
+margin_left = 189.0
+margin_top = 94.5
+margin_right = 291.0
+margin_bottom = 108.5
+text = "Drag & Drop"
+
+[node name="left_click" type="Sprite" parent="lblDragNDrop"]
+position = Vector2( 88.5594, 7 )
+texture = ExtResource( 15 )
+
+[node name="lblExit" parent="." instance=ExtResource( 4 )]
+margin_left = 115.0
+margin_top = 113.851
+margin_right = 271.0
+margin_bottom = 127.851
+text = "Exit game & reset dialogue"
+
+[node name="esc" type="Sprite" parent="lblExit"]
+position = Vector2( 163.475, 7.40428 )
+texture = ExtResource( 16 )
