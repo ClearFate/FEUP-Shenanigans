@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://World/InteractableObject.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Inventory/Items/specialFlower16.png" type="Texture" id=10]
 [ext_resource path="res://Dialogue/DialogueBox.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/Grave.png" type="Texture" id=12]
 [ext_resource path="res://World/Townsfolk_M_Idle_1.png" type="Texture" id=13]
 [ext_resource path="res://UI/InventoryUI.tscn" type="PackedScene" id=14]
 [ext_resource path="res://World/PickableObject.tscn" type="PackedScene" id=15]
@@ -21,6 +22,7 @@
 [ext_resource path="res://Inventory/EquipmentUI.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Inventory/Items/dog.png" type="Texture" id=21]
 [ext_resource path="res://World/EventTriggerArea.tscn" type="PackedScene" id=22]
+[ext_resource path="res://World/Full Vending Machine.png" type="Texture" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 0, 0 )
@@ -966,9 +968,15 @@ position = Vector2( 73.1298, -264.866 )
 interaction_val = "dd"
 asset = ExtResource( 13 )
 
+[node name="InteractableBox" parent="YSort/Npcs/InteractableObject4" index="3"]
+visible = true
+
 [node name="InteractableObject3" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( -81.7069, 2.09853 )
 interaction_val = "grave"
+
+[node name="Sprite" parent="YSort/Npcs/InteractableObject3" index="1"]
+texture = ExtResource( 12 )
 
 [node name="Spritz" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( 92.3161, -261.414 )
@@ -995,9 +1003,26 @@ interaction_type = 1
 interaction_val = "SpecialFlower"
 asset = ExtResource( 10 )
 
-[node name="InteractableObject2" parent="YSort/Npcs" instance=ExtResource( 9 )]
+[node name="Vending Machine" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( -449.278, -22.7077 )
 interaction_val = "machine"
+
+[node name="Shadow" parent="YSort/Npcs/Vending Machine" index="0"]
+visible = true
+position = Vector2( 0.883915, -1.67039 )
+scale = Vector2( 1.05581, 1.26565 )
+
+[node name="Sprite" parent="YSort/Npcs/Vending Machine" index="1"]
+position = Vector2( 0.0631406, -33.3404 )
+texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" parent="YSort/Npcs/Vending Machine" index="2"]
+position = Vector2( 1, -5 )
+scale = Vector2( 2, 3 )
+
+[node name="InteractableBox" parent="YSort/Npcs/Vending Machine" index="3"]
+position = Vector2( 2, -2 )
+scale = Vector2( 2.3, 0.8 )
 
 [node name="InteractableObject5" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( 276.183, 105.652 )
@@ -1064,7 +1089,19 @@ rotation = 1.5708
 shape = SubResource( 87 )
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
 
+[editable path="YSort/Npcs/InteractableObject"]
+
+[editable path="YSort/Npcs/InteractableObject4"]
+
+[editable path="YSort/Npcs/InteractableObject3"]
+
 [editable path="YSort/Npcs/Spritz"]
+
+[editable path="YSort/Npcs/Vending Machine"]
+
+[editable path="YSort/Npcs/InteractableObject5"]
+
+[editable path="YSort/Npcs/InteractableObject6"]
 
 [editable path="Node2D/EventTriggerArea"]
 

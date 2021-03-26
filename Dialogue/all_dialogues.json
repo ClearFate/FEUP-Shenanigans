@@ -107,7 +107,7 @@
                     "item": "SpecialFlower"
                 },
                 "018": {
-                    "text": "Actually, Dog Dude got one for you",
+                    "text": "Actually, Raul Simao got one for you",
                     "flag": "dd_flower"                    
                 },
                 "012": {
@@ -167,7 +167,7 @@
                     "item": "SpecialFlower"
                 },
                 "018": {
-                    "text": "Actually, Dog Dude got one for you",
+                    "text": "Actually, Raul Simao got one for you",
                     "flag": "dd_flower"
                 },
                 "015": {
@@ -290,7 +290,7 @@
         },
         "030": {
             "name": "Old Man",
-            "text": "What?! And you made me blame it all on poor Dog Dude?!",
+            "text": "What?! And you made me blame it all on poor Raul Simao?!",
             "delayed_flag": "old_dd_reconciled",
             "next": "27"
         },
@@ -331,8 +331,8 @@
             "001": {}
         },
         "001": {
-            "name": "Dog Dude",
-            "text": "Hey, I'm Dog Dude, and this is my lovely dog, Spritz.",
+            "name": "Raul Simao",
+            "text": "Hey, I'm Raul Simao, and this is my lovely dog, Spritz.",
             "set_flag": "dd_meet",
             "replies": {
                 "011": {
@@ -351,12 +351,12 @@
             }
         },
         "002": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Spritz ain't mangy!",
             "set_flag": "dd_mangy"
         },
         "003": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Have you talked to Old Man Arnaldo?",
             "replies": {
                 "010": {
@@ -379,26 +379,26 @@
             }
         },
         "004": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "You don't know Old Man Arnaldo? He's that old man, down there.",
             "next": "005"
         },
         "005": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "If he asks something of you, please come and see me."
         },
         "006": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Hello, again!",
             "next": "003"
         },
         "007": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "I hope you didn't come here to insult Spritz again...",
             "next": "003"
         },
         "008": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "It depends. Do you still think Spritz is a \"mangy thing\"?",
             "replies": {
                 "009": {
@@ -410,11 +410,11 @@
             }
         },
         "009": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Then I guess you wouldn't want that \"mangy thing\" following you around, would you?"
         },
         "010": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "What did he tell you?",
             "replies": {
                 "011": {
@@ -437,24 +437,24 @@
             }
         },
         "011": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "It was not Spritz's fault. He only goes where people walk him, unless he's in danger. He came running back for help that day. Josefa probably didn't know of the monsters...",
             "set_flag": "dd_mention_spritz_fault",
             "next": "010"
         },
         "012": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "He was probably talking about his wife's favorite flower...",
             "next": "013"
         },
         "013": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "If I gave it to him, he might be willing to to hear me out and who knows, maybe forgive me...",
             "set_flag": "dd_know_quest_flower",
             "next": "014"
         },
         "014": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "When you find it, could you bring it to me instead? I would be forever grateful!",
             "replies": {
                 "023": {
@@ -478,22 +478,22 @@
             }
         },
         "015": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Thank you. Spritz and I will be here, friend!",
             "set_flag": "quest_flower_dd"
         },
         "016": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Oh... That's a shame. At least you'll help Arnaldo.",
             "set_flag": "quest_flower_dd_no"
         },
         "017": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "I think you should reconsider. I'll be here if you do.",
             "set_flag": "quest_flower_dd_no"
         },
         "018": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Hey, have you reconsidered?",
             "replies": {
                 "023": {
@@ -522,11 +522,11 @@
             }
         },
         "019": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "I'll be here if you change your mind."
         },
         "020": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "So, have you brought the flower?",
             "replies": {
                 "024": {
@@ -544,21 +544,21 @@
             }
         },
         "021": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Spritz and I will be waiting!"
         },
         "022": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "That's a shame... At least Arnaldo is happy.",
             "set_flag": "quest_flower_dd_sad"
         },
         "023": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Wow! I wasn't expecting that!",
             "next": "024"
         },
         "024": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Thank you so much! If you need anything, I'll be here, friend.",
             "remove_item": "SpecialFlower",
             "set_flag": "dd_flower"
@@ -599,12 +599,12 @@
             "034": {}
         },
         "027": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Of course, my friend! It's the least I can do after you helped me reconcile with Arnaldo!",
             "next": "030"
         },
         "028": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "You didn't help me, but you kept your word to Arnaldo and gave him the flower, which means you keep your word.",
             "next": "029"
         },
@@ -624,14 +624,14 @@
             }
         },
         "030": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Take care of Spritz and don't forget to bring him back when you're done. I don't know what I'd do without him!",
             "set_flag": "dd_borrow_dog",
             "reward": "Dog",
             "visibility": "Spritz"
         },
         "031": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Dampere has a thing for truffles, so that's a legitimate reason!",
             "next": "030"
         },
@@ -642,19 +642,19 @@
             "033": {}
         },
         "032": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "You weren't fond of him before, and I doubt you changed your mind..."
         },
         "033": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Dog's usually like treats, so you might be able to get YOUR OWN dog if you have some on you! Not Spritz, though, he already has an owner!"
         },
         "034": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Sorry, I don't trust you enough to lend you my dear Spritz."
         },
         "035":{
-            "name":"Dog Dude",
+            "name":"Raul Simao",
             "text": "Don't forget to return Spritz!",
             "replies": {
                 "036": {
@@ -667,18 +667,18 @@
             }
         },
         "036": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Thank you. I hope he was able to help!",
             "set_flag": "dd_return_dog",
             "remove_item": "Dog",
             "visibility": "Spritz"
         },
         "037": {
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "No worries, just don't forget to bring him back!"
         },
         "038":{
-            "name": "Dog Dude",
+            "name": "Raul Simao",
             "text": "Do you need Fritz's assistance again?",
             "replies": {
                 "027": {
@@ -786,6 +786,7 @@
         "002": {
             "name": "Friend",
             "text": "Problem is there is no way out. At least that I know of. I talked to a shady guy, to the east, offering some sort of deal to get me out, but It seemed too risky",
+            "set_flag": "intro_done",
             "next": "003"
         },
         "003":{
@@ -829,6 +830,9 @@
     },
     "grunho": {
         "start": {
+            "009": {
+                "flag": "grunho_escape"
+            },
             "006":{
                 "flag": "grunho_meet"
             },
@@ -836,7 +840,7 @@
             }
         },
         "001": {
-            "name": "Abrotio Primaço",
+            "name": "Abrotio Primao",
             "text": "Hey, you. Stuck here, right? I know way to get out, yes? You want?",
             "replies": {
                 "002": {
@@ -848,8 +852,8 @@
             }
         },
         "002": {
-            "name": "Abrotio Primaço",
-            "text": "Very nice. I help, but first you give. Like unique valuable item, or dog seasoned with truffle. Hmmm, truffle dog...",
+            "name": "Abrotio Primao",
+            "text": "Very nice. I help, but first you give. Like unique valuable item, or dog seasoned with truffle.",
             "set_flag": "grunho_meet",
             "replies": {
                 "003": {
@@ -865,49 +869,53 @@
             }
         },
         "003": {
-            "name": "Abrotio Primaço",
+            "name": "Abrotio Primao",
             "text": "No!",
             "set_flag": "grunho_asked_else",
             "next": "002"
         },
         "004": {
-            "name": "Abrotio Primaço",
+            "name": "Abrotio Primao",
             "text": "I wait here."
         },
         "005": {
-            "name": "Abrotio Primaço",
+            "name": "Abrotio Primao",
             "text": "You no escape area without Abrotio, I guarantee."
         },
         "006": {
-            "name": "Abrotio Primaço",
+            "name": "Abrotio Primao",
             "text": "You bring what I ask? No deal other way.",
             "replies": {
                 "007": {
                     "text": "Here's a unique family heirloom",
                     "item": "WifeHeirloom"
                 },
-                "003": {
+                "008": {
                     "text": "Here's a dog, no truffles",
                     "item": "Dog"
+                },
+                "005": {
+                    "text": "Nope"
                 }
             }
         },
         "007": {
-            "name": "Abrotio Primaço",
+            "name": "Abrotio Primao",
             "text": "Much pretty I like...",
             "remove_item": "WifeHeirloom",
             "set_flag": "grunho_unique",
             "next": "009"
         },
         "008": {
-            "name": "Abrotio Primaço",
+            "name": "Abrotio Primao",
             "text": "Is good, dog meat good with or no truffle",
             "set_flag": "grunho_dog",
             "next": "009"
         },
         "009": {
-            "name": "Abrotio Primaço",
+            "name": "Abrotio Primao",
             "text": "To go now?",
+            "set_flag": "grunho_escape",
             "replies": {
                 "010": {
                     "text": "Yes, get me out of here",
@@ -924,17 +932,17 @@
             }
         },
         "010": {
-            "name": "Abrotio Primaço",
+            "name": "Abrotio Primao",
             "text": "Ready! We go away!",
             "set_flag": "grunho_escape",
             "finish": {}
         },
         "011": {
-            "name": "Abrotio Primaço",
+            "name": "Abrotio Primao",
             "text": "Fine. Find machine then back but fast"
         },
         "012":{
-            "name": "Abrotio Primaço",
+            "name": "Abrotio Primao",
             "text": "No problem. Think I know guy just tell him to ready",
             "set_flag": "grunho_friend_ask"
         }
