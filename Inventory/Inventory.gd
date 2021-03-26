@@ -155,7 +155,7 @@ func remove_item_amount(item_id, amount):
 			item.amount -= amount
 		else:
 			items[index] = null
-	emit_signal("items_changed", [index])
+		emit_signal("items_changed", [index])
 	return index >= 0
 
 func get_curr_slot_size():
