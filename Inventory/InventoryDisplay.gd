@@ -62,4 +62,5 @@ func _on_items_changed(indexes):
 func _unhandled_input(event):
 	if event.is_action_released("ui_left_mouse"):
 		if inventory.drag_data is Dictionary:
-			inventory.set_item(inventory.drag_data.item_index, inventory.drag_data.item)
+			if inventory.items[inventory.drag_data.item_index] == null:
+				inventory.set_item(inventory.drag_data.item_index, inventory.drag_data.item)
