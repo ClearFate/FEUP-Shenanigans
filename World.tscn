@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://World/InteractableObject.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Inventory/Items/specialFlower16.png" type="Texture" id=10]
 [ext_resource path="res://Dialogue/DialogueBox.tscn" type="PackedScene" id=11]
-[ext_resource path="res://World/Grave.png" type="Texture" id=12]
 [ext_resource path="res://World/Townsfolk_M_Idle_1.png" type="Texture" id=13]
 [ext_resource path="res://UI/InventoryUI.tscn" type="PackedScene" id=14]
 [ext_resource path="res://World/PickableObject.tscn" type="PackedScene" id=15]
@@ -22,7 +21,6 @@
 [ext_resource path="res://Inventory/EquipmentUI.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Inventory/Items/dog.png" type="Texture" id=21]
 [ext_resource path="res://World/EventTriggerArea.tscn" type="PackedScene" id=22]
-[ext_resource path="res://World/Full Vending Machine.png" type="Texture" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 0, 0 )
@@ -926,80 +924,88 @@ position = Vector2( -596.864, -286.023 )
 [node name="Bat6" parent="YSort/Enemies" instance=ExtResource( 7 )]
 position = Vector2( -347.758, -87.8711 )
 
-[node name="Trees" type="YSort" parent="YSort"]
+[node name="Bat7" parent="YSort/Enemies" instance=ExtResource( 7 )]
+position = Vector2( -293.054, -37.9244 )
 
-[node name="InteractableObject" parent="YSort/Trees" instance=ExtResource( 9 )]
+[node name="Bat8" parent="YSort/Enemies" instance=ExtResource( 7 )]
+position = Vector2( -300.189, -325.712 )
+
+[node name="Bat9" parent="YSort/Enemies" instance=ExtResource( 7 )]
+position = Vector2( -352.828, -352.482 )
+
+[node name="Bat10" parent="YSort/Enemies" instance=ExtResource( 7 )]
+position = Vector2( 555.726, -45.6668 )
+
+[node name="Bat11" parent="YSort/Enemies" instance=ExtResource( 7 )]
+position = Vector2( 649.673, -63.5049 )
+
+[node name="Bat12" parent="YSort/Enemies" instance=ExtResource( 7 )]
+position = Vector2( -120.933, -458.322 )
+
+[node name="Bat13" parent="YSort/Enemies" instance=ExtResource( 7 )]
+position = Vector2( -10.3367, -460.7 )
+
+[node name="Bat14" parent="YSort/Enemies" instance=ExtResource( 7 )]
+position = Vector2( -59.0942, -400.05 )
+
+[node name="Bat15" parent="YSort/Enemies" instance=ExtResource( 7 )]
+position = Vector2( 90.7459, -463.078 )
+
+[node name="Bat16" parent="YSort/Enemies" instance=ExtResource( 7 )]
+position = Vector2( 146.639, -410.753 )
+
+[node name="Npcs" type="YSort" parent="YSort"]
+
+[node name="InteractableObject" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( 313.619, -136.407 )
 interaction_val = "old"
 asset = ExtResource( 13 )
 
-[node name="InteractableObject4" parent="YSort/Trees" instance=ExtResource( 9 )]
+[node name="InteractableObject4" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( 73.1298, -264.866 )
 interaction_val = "dd"
 asset = ExtResource( 13 )
 
-[node name="InteractableBox" parent="YSort/Trees/InteractableObject4" index="3"]
-visible = true
-
-[node name="InteractableObject3" parent="YSort/Trees" instance=ExtResource( 9 )]
+[node name="InteractableObject3" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( -81.7069, 2.09853 )
 interaction_val = "grave"
 
-[node name="Sprite" parent="YSort/Trees/InteractableObject3" index="1"]
-texture = ExtResource( 12 )
-
-[node name="Spritz" parent="YSort/Trees" instance=ExtResource( 9 )]
+[node name="Spritz" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( 92.3161, -261.414 )
 interaction_val = "dog"
 hideable = true
 id = "Spritz"
 
-[node name="Sprite" parent="YSort/Trees/Spritz" index="1"]
+[node name="Sprite" parent="YSort/Npcs/Spritz" index="1"]
 position = Vector2( 0.11174, -3.64595 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 21 )
 
-[node name="CollisionShape2D" parent="YSort/Trees/Spritz" index="2"]
+[node name="CollisionShape2D" parent="YSort/Npcs/Spritz" index="2"]
 visible = true
 position = Vector2( -0.110962, -0.000747681 )
 
-[node name="InteractableBox" parent="YSort/Trees/Spritz" index="3"]
+[node name="InteractableBox" parent="YSort/Npcs/Spritz" index="3"]
 visible = true
 position = Vector2( 0.222725, 0 )
 
-[node name="CollisionShape2D" parent="YSort/Trees/Spritz/InteractableBox" index="0"]
-position = Vector2( 0.0250018, -3.62531 )
-
-[node name="SpecialFlower" parent="YSort/Trees" instance=ExtResource( 15 )]
+[node name="SpecialFlower" parent="YSort/Npcs" instance=ExtResource( 15 )]
 position = Vector2( -586.525, -330.87 )
 interaction_type = 1
 interaction_val = "SpecialFlower"
 asset = ExtResource( 10 )
 
-[node name="InteractableObject2" parent="YSort/Trees" instance=ExtResource( 9 )]
+[node name="InteractableObject2" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( -449.278, -22.7077 )
 interaction_val = "machine"
 
-[node name="Shadow" parent="YSort/Trees/InteractableObject2" index="0"]
-visible = true
-position = Vector2( 0.883915, -1.67039 )
-scale = Vector2( 1.05581, 1.26565 )
-
-[node name="Sprite" parent="YSort/Trees/InteractableObject2" index="1"]
-position = Vector2( 0.0631406, -33.3404 )
-texture = ExtResource( 23 )
-
-[node name="CollisionShape2D" parent="YSort/Trees/InteractableObject2" index="2"]
-position = Vector2( 1, -5 )
-scale = Vector2( 2, 3 )
-
-[node name="InteractableBox" parent="YSort/Trees/InteractableObject2" index="3"]
-position = Vector2( 2, -2 )
-scale = Vector2( 2.3, 0.8 )
-
-[node name="InteractableObject5" parent="YSort/Trees" instance=ExtResource( 9 )]
+[node name="InteractableObject5" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( 276.183, 105.652 )
 interaction_val = "friend"
+
+[node name="InteractableObject6" parent="YSort/Npcs" instance=ExtResource( 9 )]
+position = Vector2( 688.137, -192.285 )
+interaction_val = "grunho"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1058,21 +1064,7 @@ rotation = 1.5708
 shape = SubResource( 87 )
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
 
-[editable path="YSort/Trees/InteractableObject"]
-
-[editable path="YSort/Trees/InteractableObject4"]
-
-[editable path="YSort/Trees/InteractableObject4/InteractableBox"]
-
-[editable path="YSort/Trees/InteractableObject3"]
-
-[editable path="YSort/Trees/InteractableObject3/InteractableBox"]
-
-[editable path="YSort/Trees/Spritz"]
-
-[editable path="YSort/Trees/Spritz/InteractableBox"]
-
-[editable path="YSort/Trees/InteractableObject2"]
+[editable path="YSort/Npcs/Spritz"]
 
 [editable path="Node2D/EventTriggerArea"]
 

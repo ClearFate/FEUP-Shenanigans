@@ -770,7 +770,10 @@
     },
     "friend": {
         "start": {
-            "003": {
+            "008": {
+                "flag": "friend_escape"
+            },
+            "004": {
                 "flag": "intro_done"
             },
             "001": {}
@@ -788,6 +791,152 @@
         "003":{
             "name": "Friend",
             "text": "I'll be here if you need me, and don't forget to tell me if you find a way out!"
+        },
+        "004": {
+            "name": "Friend",
+            "text": "Hey! You're back with good news, I hope?",
+            "replies": {
+                "005": {
+                    "text": "Got us a way out of here, but you need to hurry",
+                    "flag": "grunho_friend_ask"
+                },
+                "006": {
+                    "text": "I found a machine. No coffe, though",
+                    "flag": "machine_found"
+                },
+                "007": {
+                    "text": "No luck so far"
+                }
+            }            
+        },
+        "005": {
+            "name": "Friend",
+            "text": "Nice! I'll meet you there",
+            "set_flag": "friend_escape"
+        },
+        "006": {
+            "name": "Friend",
+            "text": "That's a shame... We still need to find a way out!"
+        },
+        "007": {
+            "name": "Friend",
+            "text": "Well, I'll be here if you need me, and don't forget to tell me if you find a way out!"
+        },
+        "008": {
+            "name": "Friend",
+            "text": "Don't worry about me, I'll be there on time"
+        }
+    },
+    "grunho": {
+        "start": {
+            "006":{
+                "flag": "grunho_meet"
+            },
+            "001":{
+            }
+        },
+        "001": {
+            "name": "Abrotio Primaço",
+            "text": "Hey, you. Stuck here, right? I know way to get out, yes? You want?",
+            "replies": {
+                "002": {
+                    "text": "Yes"
+                },
+                "003": {
+                    "text": "I think I'm good"
+                }
+            }
+        },
+        "002": {
+            "name": "Abrotio Primaço",
+            "text": "Very nice. I help, but first you give. Like unique valuable item, or dog seasoned with truffle. Hmmm, truffle dog...",
+            "set_flag": "grunho_meet",
+            "replies": {
+                "003": {
+                    "text": "Can't I get you anything else?",
+                    "no_flag": "grunho_asked_else"
+                },
+                "004": {
+                    "text": "Sure... I'll see what I can do"
+                },
+                "005": {
+                    "text": "I'll think about it"
+                }
+            }
+        },
+        "003": {
+            "name": "Abrotio Primaço",
+            "text": "No!",
+            "set_flag": "grunho_asked_else",
+            "next": "002"
+        },
+        "004": {
+            "name": "Abrotio Primaço",
+            "text": "I wait here."
+        },
+        "005": {
+            "name": "Abrotio Primaço",
+            "text": "You no escape area without Abrotio, I guarantee."
+        },
+        "006": {
+            "name": "Abrotio Primaço",
+            "text": "You bring what I ask? No deal other way.",
+            "replies": {
+                "007": {
+                    "text": "Here's a unique family heirloom",
+                    "item": "WifeHeirloom"
+                },
+                "003": {
+                    "text": "Here's a dog, no truffles",
+                    "item": "Dog"
+                }
+            }
+        },
+        "007": {
+            "name": "Abrotio Primaço",
+            "text": "Much pretty I like...",
+            "remove_item": "WifeHeirloom",
+            "set_flag": "grunho_unique",
+            "next": "009"
+        },
+        "008": {
+            "name": "Abrotio Primaço",
+            "text": "Is good, dog meat good with or no truffle",
+            "set_flag": "grunho_dog",
+            "next": "009"
+        },
+        "009": {
+            "name": "Abrotio Primaço",
+            "text": "To go now?",
+            "replies": {
+                "010": {
+                    "text": "Yes, get me out of here",
+                    "flag": "machine_found"
+                },
+                "011": {
+                    "text": "Wait, I haven't found the machine yet!",
+                    "no_flag": "machine_found"
+                },
+                "012": {
+                    "text": "Wait, can I bring a friend with me?",
+                    "flag": "intro_done"
+                }
+            }
+        },
+        "010": {
+            "name": "Abrotio Primaço",
+            "text": "Ready! We go away!",
+            "set_flag": "grunho_escape",
+            "finish": {}
+        },
+        "011": {
+            "name": "Abrotio Primaço",
+            "text": "Fine. Find machine then back but fast"
+        },
+        "012":{
+            "name": "Abrotio Primaço",
+            "text": "No problem. Think I know guy just tell him to ready",
+            "set_flag": "grunho_friend_ask"
         }
     },
     "machine": {
@@ -795,7 +944,8 @@
             "001": {}
         },
         "001": {
-            "text": "Before you stands a vending machine. Unfortunately, it's a snack machine, not the one you're looking for. "
+            "text": "Before you stands a vending machine. Unfortunately, it's a snack machine, not the one you're looking for. ",
+            "set_flag": "machine_found"
         }
     }
 }
