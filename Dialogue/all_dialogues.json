@@ -8,10 +8,10 @@
                 "flag": "old_show_stolen_heirloom"
             },
             "024": {
-                "flag": "mad_old_dd"
+                "flag": "old_dd_mad"
             },
             "022": {
-                "flag": "reconciled_old_dd"
+                "flag": "old_dd_reconciled"
             },
             "019": {
                 "flag": "quest_flower_completed"
@@ -50,7 +50,8 @@
         "004": {
             "name": "Old Man",
             "text": "She was walking a boy's dog, and the wretched beast ran away. My wife went after it and a few hours later the dog came back, unharmed, while my wife was nowhere in sight.",
-            "next": "005"
+            "next": "005",
+            "set_flag": "old_mention_dd"
         },
         "005": {
             "name": "Old Man",
@@ -90,6 +91,7 @@
         "009": {
             "name": "Old Man",
             "text": "You seem like a capable individual. Would you mind picking up a certain flower for me?",
+            "set_flag": "old_mention_flower",
             "replies": {
                 "010": {
                     "text": "What's so special about this flower?",
@@ -105,7 +107,7 @@
                 },
                 "018": {
                     "text": "Actually, Dog Dude got one for you",
-                    "flag": "flower_dd"                    
+                    "flag": "dd_flower"                    
                 },
                 "012": {
                     "text": "Yeah, no problem"
@@ -165,7 +167,7 @@
                 },
                 "018": {
                     "text": "Actually, Dog Dude got one for you",
-                    "flag": "flower_dd"
+                    "flag": "dd_flower"
                 },
                 "015": {
                     "text": "Not yet"
@@ -191,7 +193,7 @@
         "018": {
             "name": "Old Man",
             "text": "Really? That's so nice of him! Maybe I've been too harsh... It wasn't his fault, and the dog's too stupid to blame",
-            "set_flag":"reconciled_old_dd",
+            "set_flag":"old_dd_reconciled",
             "next": "017"
         },
         "019": {
@@ -288,7 +290,7 @@
         "030": {
             "name": "Old Man",
             "text": "What?! And you made me blame it all on poor Dog Dude?!",
-            "set_flag": "reconciled_old_dd",
+            "set_flag": "old_dd_reconciled",
             "next": "27"
         },
         "031": {
@@ -300,16 +302,10 @@
         }
     },
     "bush":{
-        "start": {
-            "003": {
-                "item": "Sword"
-            },
-            "001": {}
-        },
         "001": {
             "name": "Laio",
             "text": "i q",
-            "next": "002"
+            "next": "branch001"
         },
         "002": {
             "name": "Laio",
@@ -318,6 +314,16 @@
         "003": {
             "name": "Laio",
             "text": "Cool Sword"
+        },
+        "004": {
+            "name": "AHAHAHAHAHAH",
+            "text": "NAB"
+        },
+        "branch001": {
+            "003": {
+                "item": "Sword"
+            },
+            "004": {}
         }
     }
 }
