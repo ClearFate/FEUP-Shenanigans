@@ -39,8 +39,7 @@ func _input(event):
 		if event.is_action_pressed("ui_accept") && !has_replies:
 			next_dialogue()
 	elif Input.is_action_pressed("exit_game"):
-		reset_flags()
-		get_tree().quit()
+		end_game("leave")
 
 func can_world_move():
 	return state == EXPLORATION
@@ -95,6 +94,10 @@ func update_dialogue():
 				set_flag(curr_conversation["set_flag"])
 			if curr_conversation.has("delayed_flag"):
 				add_pending_flag(curr_conversation["delayed_flag"])
+			if curr_conversation.has("heal"):
+				PlayerStats.heal()
+			if curr_conversation.has("finish"):
+				end_game("end")
 			trim_branching_replies(curr_conversation)
 			if curr_conversation.has("replies"):
 				has_replies = true
@@ -209,6 +212,11 @@ func take_item(item_id):
 func item_reward_message(item_name):
 	var item_message  = {"text":"You received a " + item_name}
 	emit_signal("update_dialogue", item_message)
+
+func end_game(end_type):
+	if end_type != "end":
+		reset_flags()
+	get_tree().quit()
 
 #dialogue file loading
 

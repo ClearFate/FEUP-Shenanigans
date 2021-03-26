@@ -894,6 +894,10 @@
                     "text": "Here's a dog, no truffles",
                     "item": "Dog"
                 },
+                "013": {
+                    "text": "Here's a special snack",
+                    "item": "BagOfChips"
+                },
                 "005": {
                     "text": "Nope"
                 }
@@ -910,6 +914,7 @@
             "name": "Abrotio Primao",
             "text": "Is good, dog meat good with or no truffle",
             "set_flag": "grunho_dog",
+            "remove_item": "Dog",
             "next": "009"
         },
         "009": {
@@ -945,15 +950,57 @@
             "name": "Abrotio Primao",
             "text": "No problem. Think I know guy just tell him to ready",
             "set_flag": "grunho_friend_ask"
+        },
+        "013": {
+            "name": "Abrotio Primao",
+            "text": "Oh my god what is this it? Tastes just like dog seasoned with truffle, very good!",
+            "set_flag": "grunho_chips",
+            "remove_item": "Dog",
+            "next": "009"
         }
     },
     "machine": {
         "start": {
+            "002": {
+                "item": "DogTreat"
+            },
             "001": {}
         },
         "001": {
-            "text": "Before you stands a vending machine. Unfortunately, it's a snack machine, not the one you're looking for. ",
+            "text": "Before you stands a vending machine. Unfortunately, it's a snack machine, not the one you're looking for. There's a coffee stain on it, however, and you cannot resist the urge to lick it. Somehow, you feel better!",
+            "heal": {},
             "set_flag": "machine_found"
-        }
+        },
+        "002": {
+            "text": "When you approach the machine, your dog treat starts humming. A compartment extends, with the exact shape of the treat, and a screen with three options appears",
+            "next": "006"
+        },
+        "003": {
+            "text": "You hear a loud THUNK, and then you retrieve the armor.",
+            "reward": "PlateArmor"
+        },
+        "004": {
+            "text": "The machine spits out a blade, which somehow lands at your feet without hurting you.",
+            "reward": "Sword"
+        },
+        "005": {
+            "text": "A celestial tune playes while the chips are extracted within a special compartment, which is only inserted after you pick them up.",
+            "reward": "BagOfChips"
+        },
+        "006": {
+            "text": "Which do you choose?",
+            "remove_item": "DogTreat",
+            "replies": {
+                "003": {
+                    "text": "Pick the armor"
+                },
+                "004": {
+                    "text": "Pick the sword"
+                },
+                "005": {
+                    "text": "Pick the dog \"seasoned with truffles\" flavoured chips"
+                }
+            }
+        }        
     }
 }

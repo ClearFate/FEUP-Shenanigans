@@ -35,3 +35,6 @@ func set_max_health(val):
 	max_health = max(val, 1)
 	health = min(max_health, health)
 	emit_signal("max_health_changed", max_health)
+	
+func heal():
+	set_health(max_health)

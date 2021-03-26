@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Inventory/Item.gd" type="Script" id=1]
+[ext_resource path="res://Inventory/Items/BagOfChips.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "BagOfChips"
+id = "BagOfChips"
+texture = ExtResource( 2 )
+equippable = false
+heal = 0
+dmg = 0
+durability = 0
