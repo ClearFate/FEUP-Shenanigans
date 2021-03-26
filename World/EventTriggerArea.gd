@@ -10,6 +10,6 @@ func _ready():
 
 func _on_EventTriggerArea_body_entered(body):
 	if set_delayed_flags:
-		pass
+		EventHandler.set_pending_flags()
 	else:
 		interact()

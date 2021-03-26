@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=2]
+[gd_scene load_steps=110 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -814,6 +814,10 @@ points = PoolVector2Array( 8, 32, 0, 32, 0, 0, 32, 0, 32, 8, 8, 8, 8, 32 )
 } ]
 0/z_index = 0
 
+[sub_resource type="CapsuleShape2D" id=87]
+radius = 239.858
+height = 383.366
+
 [node name="World" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -1010,9 +1014,12 @@ script = ExtResource( 17 )
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="EventTriggerArea" parent="Node2D" instance=ExtResource( 22 )]
-position = Vector2( -49.6475, -23.3221 )
+position = Vector2( -487.97, -164.084 )
 interaction_val = "grave"
-set_delayed_flags = true
+
+[node name="CollisionShape2D" parent="Node2D/EventTriggerArea" index="0"]
+position = Vector2( 36.7695, -46.669 )
+shape = SubResource( 87 )
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
 
 [editable path="YSort/Trees/InteractableObject"]
@@ -1028,3 +1035,5 @@ set_delayed_flags = true
 [editable path="YSort/Trees/Spritz"]
 
 [editable path="YSort/Trees/Spritz/InteractableBox"]
+
+[editable path="Node2D/EventTriggerArea"]

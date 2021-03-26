@@ -24,7 +24,11 @@ var gave_item = false #true when a dialogue option resulted in a reward, false o
 
 var has_replies = false
 
+#entities that can be hidden with interactions/dialogue
 var hideable_entities = []
+
+#flags waiting to be triggered in "safe zones" (away from their effect)
+var pending_flags = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -89,6 +93,8 @@ func update_dialogue():
 				take_item(curr_conversation["remove_item"])
 			if curr_conversation.has("set_flag"):
 				set_flag(curr_conversation["set_flag"])
+			if curr_conversation.has("delayed_flag"):
+				add_pending_flag(curr_conversation["delayed_flag"])
 			trim_branching_replies(curr_conversation)
 			if curr_conversation.has("replies"):
 				has_replies = true
@@ -180,6 +186,14 @@ func reset_flags():
 			config.erase_section(section)
 	# Save the changes by overwriting the previous file
 	config.save(flag_file_path)
+
+func add_pending_flag(flag):
+	pending_flags.push_back(flag)
+
+func set_pending_flags():
+	while pending_flags.size() > 0:
+		var flag = pending_flags.pop_front()
+		set_flag(flag)
 
 #item methods
 

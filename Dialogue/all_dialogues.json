@@ -194,7 +194,7 @@
         "018": {
             "name": "Old Man",
             "text": "Really? That's so nice of him! Maybe I've been too harsh... It wasn't his fault, and the dog's too stupid to blame",
-            "set_flag":"old_dd_reconciled",
+            "delayed_flag":"old_dd_reconciled",
             "next": "017"
         },
         "019": {
@@ -291,7 +291,7 @@
         "030": {
             "name": "Old Man",
             "text": "What?! And you made me blame it all on poor Dog Dude?!",
-            "set_flag": "old_dd_reconciled",
+            "delayed_flag": "old_dd_reconciled",
             "next": "27"
         },
         "031": {
@@ -753,7 +753,8 @@
             "text": "Spritz happily digs, spraying earth everywhere, until he finds Josefa's bones. You pry her pendant out of her neck, while he happily chews on a bone.",
             "next": "006",
             "reward": "WifeHeirloom",
-            "set_flag": "grave_dig_dog"
+            "set_flag": "grave_dig_dog",
+            "delayed_flag": "old_dd_mad"
         },
         "005": {
             "text": "You dig for a bit, until your nails hit earth that is no longer soft. You feel continuing without some sort of tool would be a waste of time.",
@@ -764,7 +765,7 @@
             "set_flag": "grave_dug"
         },
         "007": {
-            "text": "It's hard to miss the hole you dug and, from where you are, you can see Josefa's skeleton, covered in her tattered dress."
+            "text": "It's hard to miss the hole you dug and, from where you stand, you can see Josefa's skeleton, covered in her tattered dress."
         }
 
     }
