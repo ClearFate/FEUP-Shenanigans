@@ -782,7 +782,7 @@
         },
         "002": {
             "name": "Friend",
-            "text": "Problem is there is no way out. At least that I know of. I talked to a shady guy offering some sort of deal to get me out, but It seemed to risky",
+            "text": "Problem is there is no way out. At least that I know of. I talked to a shady guy, to the east, offering some sort of deal to get me out, but It seemed too risky",
             "next": "003"
         },
         "003":{
