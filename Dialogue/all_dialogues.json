@@ -2,7 +2,7 @@
     "old":{
         "start": {
             "032": {
-                "flag":"old_heart_attack"
+                "flag": "old_heart_attack"
             },
             "031": {
                 "flag": "old_show_stolen_heirloom"
@@ -190,7 +190,7 @@
         },
         "018": {
             "name": "Old Man",
-            "text": "Thank you so much! You don't know how much this means to me... Here, this ain't much, but it's all I have!",
+            "text": "Really? That's so nice of him! Maybe I've been too harsh... It wasn't his fault, and the dog's too stupid to blame",
             "set_flag":"reconciled_old_dd",
             "next": "017"
         },
