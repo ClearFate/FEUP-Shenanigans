@@ -1,7 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Fonts/Pixellettersfull-BnJ5.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Keys/d.png" type="Texture" id=3]
+[ext_resource path="res://UI/PLabel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Keys/left.png" type="Texture" id=5]
+[ext_resource path="res://Keys/down.png" type="Texture" id=6]
+[ext_resource path="res://Keys/w.png" type="Texture" id=7]
+[ext_resource path="res://Keys/right.png" type="Texture" id=8]
+[ext_resource path="res://Keys/up.png" type="Texture" id=9]
+[ext_resource path="res://Keys/s.png" type="Texture" id=10]
+[ext_resource path="res://Keys/a.png" type="Texture" id=11]
+[ext_resource path="res://Keys/shift.png" type="Texture" id=12]
+[ext_resource path="res://Keys/e.png" type="Texture" id=13]
+[ext_resource path="res://Keys/spc.png" type="Texture" id=14]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.302673, 0.667969, 0.522421, 1, 0.222168, 0.691391, 0.875, 1 )
@@ -22,9 +34,13 @@ __meta__ = {
 }
 
 [node name="Background" type="TextureRect" parent="."]
+anchor_top = -0.00262188
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = 1.52588e-05
+anchor_bottom = 0.997378
+margin_left = -0.943863
+margin_top = -0.297291
+margin_right = -0.943848
+margin_bottom = -0.297272
 texture = SubResource( 2 )
 expand = true
 __meta__ = {
@@ -33,9 +49,9 @@ __meta__ = {
 
 [node name="Button2" parent="." instance=ExtResource( 2 )]
 margin_left = -25.0
-margin_top = 120.0
+margin_top = 145.0
 margin_right = 25.0
-margin_bottom = 140.0
+margin_bottom = 165.0
 text = "Back"
 reference_path = "res://UI/GameMenu.tscn"
 
@@ -56,3 +72,75 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+
+[node name="lblMove" parent="." instance=ExtResource( 4 )]
+margin_left = 85.0
+margin_top = 55.0
+margin_right = 125.0
+margin_bottom = 69.0
+text = "Move"
+
+[node name="up" type="Sprite" parent="lblMove"]
+position = Vector2( 105.133, -6.72802 )
+texture = ExtResource( 9 )
+
+[node name="a" type="Sprite" parent="lblMove"]
+position = Vector2( 44.3693, 6.56954 )
+texture = ExtResource( 11 )
+
+[node name="w" type="Sprite" parent="lblMove"]
+position = Vector2( 58.548, -7.33294 )
+texture = ExtResource( 7 )
+
+[node name="s" type="Sprite" parent="lblMove"]
+position = Vector2( 58.4534, 6.38038 )
+texture = ExtResource( 10 )
+
+[node name="d" type="Sprite" parent="lblMove"]
+position = Vector2( 72.4215, 6.40756 )
+texture = ExtResource( 3 )
+
+[node name="right" type="Sprite" parent="lblMove"]
+position = Vector2( 117.564, 6.29612 )
+texture = ExtResource( 8 )
+
+[node name="down" type="Sprite" parent="lblMove"]
+position = Vector2( 105.133, 6.39913 )
+texture = ExtResource( 6 )
+
+[node name="left" type="Sprite" parent="lblMove"]
+position = Vector2( 92.6745, 6.51336 )
+texture = ExtResource( 5 )
+
+[node name="lblRoll" parent="." instance=ExtResource( 4 )]
+margin_left = 85.0
+margin_top = 95.0
+margin_right = 125.0
+margin_bottom = 109.0
+text = "Roll"
+
+[node name="shift" type="Sprite" parent="lblRoll"]
+position = Vector2( 72.086, 6.25019 )
+texture = ExtResource( 12 )
+
+[node name="lblAttack" parent="." instance=ExtResource( 4 )]
+margin_left = 85.0
+margin_top = 115.0
+margin_right = 125.0
+margin_bottom = 129.0
+text = "Attack"
+
+[node name="spc" type="Sprite" parent="lblAttack"]
+position = Vector2( 71.8453, 5.81712 )
+texture = ExtResource( 14 )
+
+[node name="lblInteract" parent="." instance=ExtResource( 4 )]
+margin_left = 85.0
+margin_top = 75.0
+margin_right = 127.0
+margin_bottom = 89.0
+text = "Interact"
+
+[node name="e" type="Sprite" parent="lblInteract"]
+position = Vector2( 72.3206, 6.62913 )
+texture = ExtResource( 13 )
