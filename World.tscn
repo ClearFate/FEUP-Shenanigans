@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://UI/DamageUI.tscn" type="PackedScene" id=18]
 [ext_resource path="res://UI/DamageUI.gd" type="Script" id=19]
 [ext_resource path="res://Inventory/EquipmentUI.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Inventory/Items/dog.png" type="Texture" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 0, 0 )
@@ -931,6 +932,9 @@ position = Vector2( 73.1298, -264.866 )
 interaction_val = "dd"
 asset = ExtResource( 13 )
 
+[node name="InteractableBox" parent="YSort/Trees/InteractableObject4" index="3"]
+visible = true
+
 [node name="InteractableObject3" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -81.7069, 2.09853 )
 interaction_type = 1
@@ -938,6 +942,26 @@ interaction_val = "WifeHeirloom"
 
 [node name="Sprite" parent="YSort/Trees/InteractableObject3" index="1"]
 texture = ExtResource( 12 )
+
+[node name="Spritz" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( 92.3161, -261.414 )
+interaction_val = "bush"
+
+[node name="Sprite" parent="YSort/Trees/Spritz" index="1"]
+position = Vector2( 0.11174, -3.64595 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" parent="YSort/Trees/Spritz" index="2"]
+visible = true
+position = Vector2( -0.110962, -0.000747681 )
+
+[node name="InteractableBox" parent="YSort/Trees/Spritz" index="3"]
+visible = true
+position = Vector2( 0.222725, 0 )
+
+[node name="CollisionShape2D" parent="YSort/Trees/Spritz/InteractableBox" index="0"]
+position = Vector2( 0.0250018, -3.62531 )
 
 [node name="SpecialFlower" parent="YSort/Trees" instance=ExtResource( 15 )]
 position = Vector2( -586.525, -330.87 )
@@ -986,4 +1010,12 @@ script = ExtResource( 17 )
 
 [editable path="YSort/Trees/InteractableObject4"]
 
+[editable path="YSort/Trees/InteractableObject4/InteractableBox"]
+
 [editable path="YSort/Trees/InteractableObject3"]
+
+[editable path="YSort/Trees/InteractableObject3/InteractableBox"]
+
+[editable path="YSort/Trees/Spritz"]
+
+[editable path="YSort/Trees/Spritz/InteractableBox"]

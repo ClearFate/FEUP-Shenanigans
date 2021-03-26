@@ -6,12 +6,12 @@
 [ext_resource path="res://World/InteractableObject.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 6.55018
-height = 8.97478
+radius = 4.66037
+height = 3.24463
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 12.7929
-height = 0.0
+radius = 8.51394
+height = 5.3799
 
 [node name="InteractableObject" type="StaticBody2D"]
 collision_mask = 0

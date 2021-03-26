@@ -968,7 +968,7 @@ height = 6.0
 
 [sub_resource type="CapsuleShape2D" id=48]
 radius = 9.00001
-height = 6.00001
+height = 1.14674
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
@@ -1052,7 +1052,6 @@ stream = ExtResource( 8 )
 volume_db = -23.885
 
 [node name="InteractionPivot" type="Position2D" parent="."]
-visible = false
 position = Vector2( 0, -4 )
 
 [node name="InteractionBox" parent="InteractionPivot" instance=ExtResource( 9 )]
