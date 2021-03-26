@@ -937,8 +937,7 @@ visible = true
 
 [node name="InteractableObject3" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -81.7069, 2.09853 )
-interaction_type = 1
-interaction_val = "WifeHeirloom"
+interaction_val = "grave"
 
 [node name="Sprite" parent="YSort/Trees/InteractableObject3" index="1"]
 texture = ExtResource( 12 )

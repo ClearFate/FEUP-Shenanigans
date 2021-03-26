@@ -56,7 +56,8 @@
         "005": {
             "name": "Old Man",
             "text": "Later I found her, dead. The place was crawling with monsters, but I managed to bring back her body. She now rests dressed in her finest dress, with her beautiful family pendant at her neck.",
-            "next": "006"
+            "next": "006",
+            "set_flag": "old_mention_necklace"
         },
         "006": {
             "name": "Old Man",
@@ -658,7 +659,7 @@
             "replies": {
                 "036": {
                     "text": "I don't need him anymore, here you go",
-                    "flag": "dd_return_dog"
+                    "item": "Dog"
                 },
                 "037": {
                     "text": "I still need him"
@@ -706,5 +707,65 @@
             "name": "Spritz",
             "text": "WOOF WOOF"
         }
+    },
+    "grave":{
+        "001": {
+            "text": "The inscription reads: \"In Loving Memory of Josefa, the sweetest soul that ever lived\"",
+            "next": "branch_dig"
+        },
+        "branch_dig": {
+            "007": {
+                "flag": "grave_dug"
+            },
+            "002": {
+                "flag": "old_mention_necklace"
+            },
+            "end": {}
+
+        },
+        "002":{
+            "text": "You remember the old man's mention of what you assume is a unique family pendant",
+            "replies": {
+                "003": {
+                    "text": "Dig with your shovel",
+                    "item": "Shovel"
+                },
+                "004": {
+                    "text": "Have Spritz dig the grave",
+                    "item": "Dog"
+                },
+                "005": {
+                    "text": "Dig with your hands",
+                    "no_flag": "grave_dig_hands"
+                },
+                "end": {
+                    "text": "Don't disturb the grave"
+                }
+            }
+        },
+        "003": {
+            "text": "You dig until you find Josefa's bones. You pry her pendant out of her neck.",
+            "next": "006",
+            "reward": "WifeHeirloom",
+            "set_flag": "grave_dig_shovel"
+        },
+        "004": {
+            "text": "Spritz happily digs, spraying earth everywhere, until he finds Josefa's bones. You pry her pendant out of her neck, while he happily chews on a bone.",
+            "next": "006",
+            "reward": "WifeHeirloom",
+            "set_flag": "grave_dig_dog"
+        },
+        "005": {
+            "text": "You dig for a bit, until your nails hit earth that is no longer soft. You feel continuing without some sort of tool would be a waste of time.",
+            "set_flag": "grave_dig_hands"
+        },
+        "006": {
+            "text": "You get out of the grave with some effort, due to the hole's size",
+            "set_flag": "grave_dug"
+        },
+        "007": {
+            "text": "It's hard to miss the hole you dug and, from where you are, you can see Josefa's skeleton, covered in her tattered dress."
+        }
+
     }
 }
