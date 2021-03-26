@@ -303,6 +303,9 @@
     },
     "dd": {
         "start": {
+            "035": {
+                "flag": "dd_borrow_dog"
+            },
             "026": {
                 "flag": "dd_flower"
             },
@@ -619,11 +622,13 @@
             "name": "Dog Dude",
             "text": "Take care of Spritz and don't forget to bring him back when you're done. I don't know what I'd do without him!",
             "set_flag": "dd_borrow_dog",
-            "reward": "Dog"
+            "reward": "Dog",
+            "visibility": "Spritz"
         },
         "031": {
             "name": "Dog Dude",
-            "text": "Dampere has a thing for truffles, so that's a legitimate reason!"
+            "text": "Dampere has a thing for truffles, so that's a legitimate reason!",
+            "next": "030"
         },
         "branch_mangy": {
             "032": {
@@ -642,6 +647,12 @@
         "034": {
             "name": "Dog Dude",
             "text": "Sorry, I don't trust you enough to lend you my dear Spritz."
+        },
+        "035":{
+            "name":"Dog Dude",
+            "text": "Hey, gimme Spritz",
+            "visibility": "Spritz",
+            "remove_item": "Dog"
         }
 
         

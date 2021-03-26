@@ -24,6 +24,8 @@ var gave_item = false #true when a dialogue option resulted in a reward, false o
 
 var has_replies = false
 
+var hideable_entities = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -43,11 +45,6 @@ func handleItemEvent(item_name):
 	var item_message  = { "001": {"reward": item_name,"text": "..."}}
 	dialogue = item_message
 	begin_dialogue()
-
-#load dialogue from specific dialogue file
-#func handleDialogueEvent(dialogue_file_path):
-#	dialogue = load_dialogue(dialogue_file_path)
-#	begin_dialogue()
 
 func handleDialogueEvent(dialogue_key):
 	var dialogues = load_dialogue(all_dialogues_path)
@@ -84,6 +81,8 @@ func update_dialogue():
 			give_item(item)
 			item_reward_message(item)
 		else:
+			if curr_conversation.has("visibility"):
+				toggle_hiding_entity(curr_conversation["visibility"])
 			if curr_conversation.has("reward"):
 				gave_item = true #TODO: refactor this, mayhaps?
 			if curr_conversation.has("remove_item"):
@@ -136,6 +135,7 @@ func choose_starting_conversation():
 		var options = start.keys()
 		curr_conversation_id = options[0]
 
+
 func choose_branch_conversation(branch_conv):
 	trim_branching_options(branch_conv)
 	if !branch_conv.empty():
@@ -146,6 +146,8 @@ func handle_branch_node():
 	if "branch" in curr_conversation_id:
 			var branch_conv = get_curr_conversation()
 			choose_branch_conversation(branch_conv)
+			
+#flag methods
 
 #checks if the flag is true (in the flags.cfg file)
 func check_flag(flag):
@@ -179,6 +181,8 @@ func reset_flags():
 	# Save the changes by overwriting the previous file
 	config.save(flag_file_path)
 
+#item methods
+
 func has_item(item_id):#TODO: TEST
 	return inventory.has_item(item_id)
 
@@ -191,6 +195,8 @@ func take_item(item_id):
 func item_reward_message(item_name):
 	var item_message  = {"text":"You received a " + item_name}
 	emit_signal("update_dialogue", item_message)
+
+#dialogue file loading
 
 #parses json
 func load_dialogue(file_path) -> Dictionary:
@@ -209,3 +215,19 @@ func get_dialogue_from_all(dialogues, dialogue_key):
 	if dialogues.has(dialogue_key):
 		ret_dialogue = dialogues[dialogue_key]
 	return ret_dialogue
+
+func add_hideable(entity):
+	hideable_entities.push_back(entity)
+
+func get_id_entity(entity_id):
+	var ret = null
+	for entity in hideable_entities:
+		if entity.id == entity_id:
+			ret = entity
+			break
+	return ret
+
+func toggle_hiding_entity(entity_id):
+	var entity = get_id_entity(entity_id)
+	if entity != null:
+		entity.toggle_hiding()
