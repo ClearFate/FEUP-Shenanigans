@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://UI/DamageUI.gd" type="Script" id=19]
 [ext_resource path="res://Inventory/EquipmentUI.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Inventory/Items/dog.png" type="Texture" id=21]
+[ext_resource path="res://World/EventTriggerArea.tscn" type="PackedScene" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 0, 0 )
@@ -1005,6 +1006,13 @@ stream = ExtResource( 16 )
 volume_db = -10.0
 autoplay = true
 script = ExtResource( 17 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="EventTriggerArea" parent="Node2D" instance=ExtResource( 22 )]
+position = Vector2( -49.6475, -23.3221 )
+interaction_val = "grave"
+set_delayed_flags = true
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
 
 [editable path="YSort/Trees/InteractableObject"]
