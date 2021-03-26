@@ -301,6 +301,264 @@
             "text": "He isn't moving... nor breathing."
         }
     },
+    "dd": {
+        "start": {
+            "025": {
+                "flag": "quest_flower_dd_sad"
+            },
+            "020": {
+                "flag": "quest_flower_dd"
+            },
+            "018": {
+                "flag": "quest_flower_dd_no"
+            },
+            "007": {
+                "flag": "dd_mangy"
+            },
+            "006": {
+                "flag": "dd_meet"
+            },
+            "001": {}
+        },
+        "001": {
+            "name": "Dog Dude",
+            "text": "Hey, I'm Dog Dude, and this is my lovely dog, Spritz.",
+            "replies": {
+                "011": {
+                    "text": "Hey, isn't that the dog who killed the old man's wife?",
+                    "flag": "old_mention_dd"
+                },
+                "003": {
+                    "text": "Hi, pleased to meet you"
+                },
+                "002": {
+                    "text": "Get that mangy thing away from me"
+                },
+                "branch_dog": {
+                    "text": "Could I borrow your dog?"
+                }
+            }
+        },
+        "002": {
+            "name": "Dog Dude",
+            "text": "Spritz ain't mangy!",
+            "set_flag": "dd_mangy"
+        },
+        "003": {
+            "name": "Dog Dude",
+            "text": "Have you talked to Old Man Arnaldo?",
+            "replies": {
+                "010": {
+                    "text": "Yes"
+                },
+                "005": {
+                    "text": "No"
+                },
+                "004": {
+                    "text": "Who?"
+                },
+                "008": {
+                    "text": "Could I borrow that dog?",
+                    "flag": "dd_mangy"
+                },
+                "branch_dog": {
+                    "text": "Could I borrow Spritz?",
+                    "no_flag": "dd_mangy"
+                }
+            }
+        },
+        "004": {
+            "name": "Dog Dude",
+            "text": "You don't know Old Man Arnaldo? He's that old man, down there.",
+            "next": "005"
+        },
+        "005": {
+            "name": "Dog Dude",
+            "text": "If he asks something of you, please come and see me."
+        },
+        "006": {
+            "name": "Dog Dude",
+            "text": "Hello, again!",
+            "next": "003"
+        },
+        "007": {
+            "name": "Dog Dude",
+            "text": "I hope you didn't come here to insult Spritz again...",
+            "next": "003"
+        },
+        "008": {
+            "name": "Dog Dude",
+            "text": "It depends. Do you still think Spritz is a \"mangy thing\"?",
+            "replies": {
+                "009": {
+                    "text": "Yes"
+                },
+                "branch_dog": {
+                    "text": "No"
+                }
+            }
+        },
+        "009": {
+            "name": "Dog Dude",
+            "text": "Then I guess you wouldn't want that \"mangy thing\" following you around, would you?"
+        },
+        "010": {
+            "name": "Dog Dude",
+            "text": "What did he tell you?",
+            "replies": {
+                "011": {
+                    "text": "He told me a dog got his wife killed.",
+                    "flag": "old_mention_dd",
+                    "no_flag": "dd_mention_spritz_fault"
+                },
+                "012": {
+                    "text": "He wants me to get him some sort of flower.",
+                    "flag": "old_mention_flower",
+                    "no_flag": "old_asked_special"
+                },
+                "013": {
+                    "text": "He wants me to get him his wife's favorite flower.",
+                    "flag": "old_asked_special"
+                },
+                "005": {
+                    "text": "Nothing interesting."
+                }
+            }
+        },
+        "011": {
+            "name": "Dog Dude",
+            "text": "It was not Spritz's fault. He only goes where people walk him, unless he's in danger. He came running back for help that day. Josefa probably didn't know of the monsters...",
+            "set_flag": "dd_mention_spritz_fault",
+            "next": "010"
+        },
+        "012": {
+            "name": "Dog Dude",
+            "text": "He was probably talking about his wife's favorite flower...",
+            "next": "013"
+        },
+        "013": {
+            "name": "Dog Dude",
+            "text": "If I gave it to him, he might be willing to to hear me out and who knows, maybe forgive me...",
+            "set_flag": "dd_know_quest_flower",
+            "next": "014"
+        },
+        "014": {
+            "name": "Dog Dude",
+            "text": "When you find it, could you bring it to me instead? I would be forever grateful!",
+            "replies": {
+                "023": {
+                    "text": "I already have it. Here you go",
+                    "item": "SpecialFlower"
+                },
+                "022": {
+                    "text": "I've already given it to Arnaldo",
+                    "flag": "quest_flower_completed",
+                    "no_flag": "dd_flower"
+                },
+                "015": {
+                    "text": "Sure"
+                },
+                "016": {
+                    "text": "No"
+                },
+                "017": {
+                    "text": "I'm not going to get the flower"
+                }
+            }
+        },
+        "015": {
+            "name": "Dog Dude",
+            "text": "Thank you. Spritz and I will be here, friend!",
+            "set_flag": "quest_flower_dd"
+        },
+        "016": {
+            "name": "Dog Dude",
+            "text": "Oh... That's a shame. At least you'll help Arnaldo.",
+            "set_flag": "quest_flower_dd_no"
+        },
+        "017": {
+            "name": "Dog Dude",
+            "text": "I think you should reconsider. I'll be here if you do.",
+            "set_flag": "quest_flower_dd_no"
+        },
+        "018": {
+            "name": "Dog Dude",
+            "text": "Hey, have you reconsidered?",
+            "replies": {
+                "023": {
+                    "text": "Yes, here you go",
+                    "item": "SpecialFlower"
+                },
+                "022": {
+                    "text": "I've already given it to Arnaldo",
+                    "flag": "quest_flower_completed",
+                    "no_flag": "dd_flower"
+                },
+                "015": {
+                    "text": "Yes"
+                },
+                "019": {
+                    "text": "No"
+                },
+                "008": {
+                    "text": "Could I borrow that dog?",
+                    "flag": "dd_mangy"
+                },
+                "branch_dog": {
+                    "text": "Could I borrow Spritz?",
+                    "flag": "dd_mangy"
+                }
+            }
+        },
+        "019": {
+            "name": "Dog Dude",
+            "text": "I'll be here if you change your mind."
+        },
+        "020": {
+            "name": "Dog Dude",
+            "text": "So, have you brought the flower?",
+            "replies": {
+                "024": {
+                    "text": "Yes, here you go",
+                    "item": "SpecialFlower"
+                },
+                "022": {
+                    "text": "I've already given it to Arnaldo",
+                    "flag": "quest_flower_completed",
+                    "no_flag": "dd_flower"
+                },
+                "021": {
+                    "text": "I don't have it yet"
+                }
+            }
+        },
+        "021": {
+            "name": "Dog Dude",
+            "text": "Spritz and I will be waiting!"
+        },
+        "022": {
+            "name": "Dog Dude",
+            "text": "That's a shame... At least Arnaldo is happy.",
+            "set_flag": "quest_flower_dd_sad"
+        },
+        "023": {
+            "name": "Dog Dude",
+            "text": "Wow! I wasn't expecting that!",
+            "next": "024"
+        },
+        "024": {
+            "name": "Dog Dude",
+            "text": "Thank you so much! If you need anything, I'll be here, friend.",
+            "remove_item": "SpecialFlower",
+            "set_flag": "dd_flower"
+        },
+        "025":{
+            "text": "TODO"
+        },
+        "branch_dog": {
+            "001": {}
+        }
+    },
     "bush":{
         "001": {
             "name": "Laio",

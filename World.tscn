@@ -928,7 +928,7 @@ asset = ExtResource( 13 )
 
 [node name="InteractableObject4" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 73.1298, -264.866 )
-interaction_val = "old"
+interaction_val = "dd"
 asset = ExtResource( 13 )
 
 [node name="InteractableObject3" parent="YSort/Trees" instance=ExtResource( 9 )]
@@ -962,18 +962,6 @@ margin_bottom = -1.0
 
 [node name="InventoryUI" parent="CanvasLayer" instance=ExtResource( 14 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
-volume_db = -10.0
-autoplay = true
-script = ExtResource( 17 )
-[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
-
-[editable path="YSort/Trees/InteractableObject"]
-
-[editable path="YSort/Trees/InteractableObject4"]
-
-[editable path="YSort/Trees/InteractableObject3"]
 [node name="DamageUI" parent="CanvasLayer" instance=ExtResource( 18 )]
 margin_left = 3.45599
 margin_top = 16.7441
@@ -986,3 +974,16 @@ margin_left = 247.0
 margin_top = 2.5
 margin_right = 289.0
 margin_bottom = 31.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -10.0
+autoplay = true
+script = ExtResource( 17 )
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
+
+[editable path="YSort/Trees/InteractableObject"]
+
+[editable path="YSort/Trees/InteractableObject4"]
+
+[editable path="YSort/Trees/InteractableObject3"]
