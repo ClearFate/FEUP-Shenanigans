@@ -768,12 +768,34 @@
             "text": "It's hard to miss the hole you dug and, from where you stand, you can see Josefa's skeleton, covered in her tattered dress."
         }
     },
+    "friend": {
+        "start": {
+            "003": {
+                "flag": "intro_done"
+            },
+            "001": {}
+        },
+        "001": {
+            "name": "Friend",
+            "text": "Hello, again. You're probably investigating the rumours about the area's machine too! No one knows if it's The Coffee Machine, but it's worth the try.",
+            "next": "002"
+        },
+        "002": {
+            "name": "Friend",
+            "text": "Problem is there is no way out. At least that I know of. I talked to a shady guy offering some sort of deal to get me out, but It seemed to risky",
+            "next": "003"
+        },
+        "003":{
+            "name": "Friend",
+            "text": "I'll be here if you need me, and don't forget to tell me if you find a way out!"
+        }
+    },
     "machine": {
         "start": {
             "001": {}
         },
         "001": {
-            "text": "Before you stands a vending machine. Unfortunately, it's a snack machine and therefore not the one you're looking for. "
+            "text": "Before you stands a vending machine. Unfortunately, it's a snack machine, not the one you're looking for. "
         }
     }
 }

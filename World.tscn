@@ -822,7 +822,7 @@ height = 751.104
 [node name="World" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 283.561, 117.785 )
+position = Vector2( 276.061, 135.285 )
 current = true
 smoothing_enabled = true
 
@@ -849,7 +849,7 @@ tile_data = PoolIntArray( -1441802, 0, 0, -1441801, 0, 2, -1507305, 0, 3, -13762
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 283.561, 117.785 )
+position = Vector2( 276.061, 135.285 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
@@ -909,13 +909,13 @@ position = Vector2( 231.499, 43.7955 )
 [node name="Enemies" type="YSort" parent="YSort"]
 
 [node name="Bat" parent="YSort/Enemies" instance=ExtResource( 7 )]
-position = Vector2( 202.351, 112.002 )
+position = Vector2( -562.394, -114.205 )
 
 [node name="Bat2" parent="YSort/Enemies" instance=ExtResource( 7 )]
 position = Vector2( -455.423, -466.674 )
 
 [node name="Bat3" parent="YSort/Enemies" instance=ExtResource( 7 )]
-position = Vector2( 333.714, 29.5076 )
+position = Vector2( -588.494, -4.20433 )
 
 [node name="Bat4" parent="YSort/Enemies" instance=ExtResource( 7 )]
 position = Vector2( -549.61, -335.392 )
@@ -924,7 +924,7 @@ position = Vector2( -549.61, -335.392 )
 position = Vector2( -596.864, -286.023 )
 
 [node name="Bat6" parent="YSort/Enemies" instance=ExtResource( 7 )]
-position = Vector2( 230.589, -3.21669 )
+position = Vector2( -347.758, -87.8711 )
 
 [node name="Trees" type="YSort" parent="YSort"]
 
@@ -996,6 +996,10 @@ scale = Vector2( 2, 3 )
 [node name="InteractableBox" parent="YSort/Trees/InteractableObject2" index="3"]
 position = Vector2( 2, -2 )
 scale = Vector2( 2.3, 0.8 )
+
+[node name="InteractableObject5" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( 276.183, 105.652 )
+interaction_val = "friend"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
