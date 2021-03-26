@@ -303,6 +303,9 @@
     },
     "dd": {
         "start": {
+            "026": {
+                "flag": "dd_flower"
+            },
             "025": {
                 "flag": "quest_flower_dd_sad"
             },
@@ -506,7 +509,7 @@
                 },
                 "branch_dog": {
                     "text": "Could I borrow Spritz?",
-                    "flag": "dd_mangy"
+                    "no_flag": "dd_mangy"
                 }
             }
         },
@@ -553,11 +556,95 @@
             "set_flag": "dd_flower"
         },
         "025":{
-            "text": "TODO"
+            "text": "I don't think Arnaldo is ever going to forgive us, but at least you helped him...",
+            "replies": {
+                "008": {
+                    "text": "Could I borrow that dog?",
+                    "flag": "dd_mangy"
+                },
+                "branch_dog": {
+                    "text": "Could I borrow Spritz?",
+                    "no_flag": "dd_mangy"
+                }
+            }
+        },
+        "026": {
+            "text": "I'm forever grateful. What do you need, friend?",
+            "replies": {
+                "008": {
+                    "text": "Could I borrow that dog?",
+                    "flag": "dd_mangy"
+                },
+                "027": {
+                    "text": "Could I borrow Spritz?",
+                    "no_flag": "dd_mangy"
+                }
+            }
         },
         "branch_dog": {
-            "001": {}
+            "027": {
+                "flag":"dd_flower"
+            },
+            "028": {
+                "flag":"quest_flower_dd_sad"
+            },
+            "034": {}
+        },
+        "027": {
+            "name": "Dog Dude",
+            "text": "Of course, my friend! It's the least I can do after you helped me reconcile with Arnaldo!",
+            "next": "030"
+        },
+        "028": {
+            "name": "Dog Dude",
+            "text": "You didn't help me, but you kept your word to Arnaldo and gave him the flower, which means you keep your word.",
+            "next": "029"
+        },
+        "029": {
+            "text": "Why do you need Spritz?",
+            "replies": {
+                "031": {
+                    "text": "The Gravekeeper needs help getting truffles",
+                    "flag": "gk_mention_truffle"
+                },
+                "branch_mangy": {
+                    "text": "I just want a dog"
+                },
+                "end":{
+                    "text":"Nevermind"
+                }
+            }
+        },
+        "030": {
+            "name": "Dog Dude",
+            "text": "Take care of Spritz and don't forget to bring him back when you're done. I don't know what I'd do without him!",
+            "set_flag": "dd_borrow_dog",
+            "reward": "Dog"
+        },
+        "031": {
+            "name": "Dog Dude",
+            "text": "Dampere has a thing for truffles, so that's a legitimate reason!"
+        },
+        "branch_mangy": {
+            "032": {
+                "flag": "dd_mangy"
+            },
+            "033": {}
+        },
+        "032": {
+            "name": "Dog Dude",
+            "text": "You weren't fond of him before, and I doubt you changed your mind..."
+        },
+        "033": {
+            "name": "Dog Dude",
+            "text": "Dog's usually like treats, so you might be able to get YOUR OWN dog if you have some on you! Not Spritz, though, he already has an owner!"
+        },
+        "034": {
+            "name": "Dog Dude",
+            "text": "Sorry, I don't trust you enough to lend you my dear Spritz."
         }
+
+        
     },
     "bush":{
         "001": {
