@@ -7,7 +7,7 @@ var max_hearts = 4 setget set_max_hearts
 onready var heartUIEmpty = $HeartUiEmpty
 onready var heartUIFull = $HeartUIFull
 
-const size_factor = 15
+const size_factor = 12
 
 
 # Called when the node enters the scene tree for the first time.

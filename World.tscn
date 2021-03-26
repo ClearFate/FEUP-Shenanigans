@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=2]
+[gd_scene load_steps=113 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Inventory/Items/specialFlower16.png" type="Texture" id=10]
 [ext_resource path="res://Dialogue/DialogueBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://World/Grave.png" type="Texture" id=12]
-[ext_resource path="res://World/Townsfolk_M_Idle_1.png" type="Texture" id=13]
 [ext_resource path="res://UI/InventoryUI.tscn" type="PackedScene" id=14]
 [ext_resource path="res://World/PickableObject.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Music and Sounds/Oi.wav" type="AudioStream" id=16]
@@ -23,6 +22,9 @@
 [ext_resource path="res://Inventory/Items/dog.png" type="Texture" id=21]
 [ext_resource path="res://World/EventTriggerArea.tscn" type="PackedScene" id=22]
 [ext_resource path="res://World/Full Vending Machine.png" type="Texture" id=23]
+[ext_resource path="res://old_man.png" type="Texture" id=24]
+[ext_resource path="res://bearded_guy.png" type="Texture" id=25]
+[ext_resource path="res://shady_guy.png" type="Texture" id=26]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 0, 0 )
@@ -827,7 +829,7 @@ current = true
 smoothing_enabled = true
 
 [node name="GrassBackground" type="Sprite" parent="."]
-position = Vector2( 341.099, -332.477 )
+position = Vector2( 341.099, -333.038 )
 scale = Vector2( 2.61075, 4.03392 )
 texture = ExtResource( 3 )
 region_enabled = true
@@ -961,12 +963,17 @@ position = Vector2( 146.639, -410.753 )
 [node name="InteractableObject" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( 313.619, -136.407 )
 interaction_val = "old"
-asset = ExtResource( 13 )
+asset = ExtResource( 21 )
+
+[node name="Sprite" parent="YSort/Npcs/InteractableObject" index="1"]
+texture = ExtResource( 24 )
 
 [node name="InteractableObject4" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( 73.1298, -264.866 )
 interaction_val = "dd"
-asset = ExtResource( 13 )
+
+[node name="Sprite" parent="YSort/Npcs/InteractableObject4" index="1"]
+texture = ExtResource( 25 )
 
 [node name="InteractableBox" parent="YSort/Npcs/InteractableObject4" index="3"]
 visible = true
@@ -1031,6 +1038,9 @@ interaction_val = "friend"
 [node name="InteractableObject6" parent="YSort/Npcs" instance=ExtResource( 9 )]
 position = Vector2( 688.137, -192.285 )
 interaction_val = "grunho"
+
+[node name="Sprite" parent="YSort/Npcs/InteractableObject6" index="1"]
+texture = ExtResource( 26 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
