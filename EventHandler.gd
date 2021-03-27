@@ -246,9 +246,10 @@ func add_hideable(entity):
 func get_id_entity(entity_id):
 	var ret = null
 	for entity in hideable_entities:
-		if entity.id == entity_id:
-			ret = entity
-			break
+		if entity != null:
+			if entity.id == entity_id:
+				ret = entity
+				break
 	return ret
 
 func toggle_hiding_entity(entity_id):
