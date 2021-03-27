@@ -983,10 +983,12 @@
             "remove_item": "DogTreat",
             "replies": {
                 "003": {
-                    "text": "Pick the armor"
+                    "text": "Pick the armor",
+                    "no_flag": "dd_flower"
                 },
                 "004": {
-                    "text": "Pick the sword"
+                    "text": "Pick the sword",
+                    "no_flag": "dd_flower"
                 },
                 "005": {
                     "text": "Pick the dog \"seasoned with truffles\" flavoured chips"
