@@ -214,9 +214,11 @@ func item_reward_message(item_name):
 	emit_signal("update_dialogue", item_message)
 
 func end_game(end_type):
-	if end_type != "end":
-		reset_flags()
-	get_tree().quit()
+	reset_flags()
+	if end_type == "end":
+		get_tree().change_scene("res://UI/EndMenu.tscn")
+	else:
+		get_tree().change_scene("res://UI/GameMenu.tscn")
 
 #dialogue file loading
 

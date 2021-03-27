@@ -14,7 +14,7 @@ width = 320
 size = 32
 font_data = ExtResource( 1 )
 
-[node name="EndMenu" type="Control"]
+[node name="GameMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -34,42 +34,37 @@ __meta__ = {
 }
 
 [node name="Button" parent="." instance=ExtResource( 2 )]
-margin_left = -30.0
-margin_top = 85.0
-margin_right = 30.0
-margin_bottom = 105.0
-text = "Start"
+margin_left = -53.185
+margin_top = 98.8591
+margin_right = 53.815
+margin_bottom = 118.859
+text = "Go Back To Menu"
 reference_path = "res://World.tscn"
 start_focused = true
 
-[node name="Button2" parent="." instance=ExtResource( 2 )]
-margin_left = -30.0
-margin_top = 115.0
-margin_right = 30.0
-margin_bottom = 135.0
-text = "Controls"
-reference_path = "res://UI/ControlsMenu.tscn"
-
 [node name="Button3" parent="." instance=ExtResource( 2 )]
-margin_left = -30.0
-margin_top = 145.0
-margin_right = 30.0
-margin_bottom = 165.0
+margin_left = -30.6299
+margin_top = 128.306
+margin_right = 29.3701
+margin_bottom = 148.306
 text = "Exit"
 
 [node name="Label" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -105.0
-margin_top = 40.0
-margin_right = 105.0
-margin_bottom = 70.0
+margin_left = -116.339
+margin_top = 30.8656
+margin_right = 132.661
+margin_bottom = 87.8656
 rect_min_size = Vector2( 200, 30 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[rainbow]FEUP Shenanigans"
-text = "FEUP Shenanigans"
+bbcode_text = "[rainbow]FEUP Shenanigans
+The End"
+text = "FEUP Shenanigans
+The End"
 scroll_active = false
 __meta__ = {
+"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
